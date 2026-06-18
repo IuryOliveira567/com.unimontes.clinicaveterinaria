@@ -14,16 +14,16 @@ public class Animal {
     private String especie;
     private String sexo;
     private int idade;
-    private String cliente;
+    private int cliente_id;
     
     public Animal(int id, String nome, String especie, String raca, String sexo,
-            int idade, double peso, String dataNascimento, String cor, String cliente) {
+            int idade, double peso, String dataNascimento, String cor, int cliente_id) {
         this.id = id;
         this.nome = nome;
         this.especie = especie;
         this.sexo = sexo;
         this.idade = idade;
-        this.cliente = cliente;
+        this.cliente_id = cliente_id;
     }
     
     public int getId() {
@@ -67,11 +67,11 @@ public class Animal {
     }
     
     
-    public String getCliente() {
-        return this.cliente;
+    public int getClienteId() {
+        return this.cliente_id;
     }
     
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setClienteId(int cliente_id) {
+        this.cliente_id = cliente_id;
     }   
 }
