@@ -12,12 +12,8 @@ public class Animal {
     private int id;
     private String nome;
     private String especie;
-    private String raca;
     private String sexo;
     private int idade;
-    private double peso;
-    private String dataNascimento;
-    private String cor;
     private String cliente;
     
     public Animal(int id, String nome, String especie, String raca, String sexo,
@@ -25,12 +21,8 @@ public class Animal {
         this.id = id;
         this.nome = nome;
         this.especie = especie;
-        this.raca = raca;
         this.sexo = sexo;
         this.idade = idade;
-        this.peso = peso;
-        this.dataNascimento = dataNascimento;
-        this.cor = cor;
         this.cliente = cliente;
     }
     
@@ -58,14 +50,6 @@ public class Animal {
         this.especie = especie;
     }
     
-    public String raca() {
-        return this.raca;
-    }
-    
-    public void setRaca(String raca) {
-        this.raca = raca;
-    }
-    
     public String getSexo() {
         return this.sexo;
     }
@@ -82,29 +66,6 @@ public class Animal {
         this.idade = idade;
     }
     
-    public float getPeso() {
-        return this.peso;
-    }
-    
-    public void setPeso(float peso) {
-        this.peso = peso;
-    }
-    
-    public String getDataNascimento() {
-        return this.dataNascimento;
-    }
-    
-    public void setDataNascimento(String dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-    
-    public String getCor() {
-        return this.cor;
-    }
-    
-    public void setCor(String cor) {
-        this.cor = cor;
-    }
     
     public String getCliente() {
         return this.cliente;
