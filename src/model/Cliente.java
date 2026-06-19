@@ -9,13 +9,22 @@ package model;
  * @author admin
  */
 public class Cliente {
-    private int id;
+    private Integer id;
     private String nome;
     private String cpf;
     private String telefone;
     private String email;
     
-    public Cliente(int id, String nome, String cpf, String telefone, String email) {
+    public Cliente() {}
+    
+    public Cliente(String nome, String cpf, String telefone, String email) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.telefone = telefone;
+        this.email = email;
+    }
+    
+    public Cliente(Integer id, String nome, String cpf, String telefone, String email) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
@@ -23,11 +32,11 @@ public class Cliente {
         this.email = email;
     }
     
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
     
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     
