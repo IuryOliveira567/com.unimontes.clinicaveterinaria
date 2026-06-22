@@ -14,6 +14,14 @@ public class Veterinario {
     private String crmv;
     private String telefone;
     
+    public Veterinario() {}
+    
+    public Veterinario(String nome, String crmv, String telefone) {
+        this.nome = nome;
+        this.crmv = crmv;
+        this.telefone = telefone;
+    }
+    
     public Veterinario(int id, String nome, String crmv, String telefone) {
         this.id = id;
         this.nome = nome;
