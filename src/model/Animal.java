@@ -11,19 +11,29 @@ package model;
 public class Animal {
     private int id;
     private String nome;
-    private String especie;
     private String sexo;
     private int idade;
     private int cliente_id;
+    private String especie;
+
     
-    public Animal(int id, String nome, String especie, String raca, String sexo,
-            int idade, double peso, String dataNascimento, String cor, int cliente_id) {
-        this.id = id;
+    public Animal() {}
+    
+    public Animal(String nome, String sexo, int idade, int cliente_id, String especie) {
         this.nome = nome;
-        this.especie = especie;
         this.sexo = sexo;
         this.idade = idade;
         this.cliente_id = cliente_id;
+        this.especie = especie;
+    }
+    
+    public Animal(int id, String nome, String sexo, int idade, int cliente_id, String especie) {
+        this.id = id;
+        this.nome = nome;
+        this.sexo = sexo;
+        this.idade = idade;
+        this.cliente_id = cliente_id;
+        this.especie = especie;
     }
     
     public int getId() {
