@@ -44,7 +44,7 @@ public class ClienteDAO {
         }
     }
     
-    public boolean apagarCliente(Cliente cliente) {
+    public boolean apagar(Cliente cliente) {
         String sql_query = "DELETE FROM clientes where nome=?";
         
         try {
@@ -59,7 +59,7 @@ public class ClienteDAO {
         }
     }
     
-    public List<Cliente> listarClientes() {
+    public List<Cliente> listar() {
         List<Cliente> clientes = new ArrayList<>();
         String sql_query = "SELECT * FROM clientes";
         
@@ -87,7 +87,7 @@ public class ClienteDAO {
         return clientes;
     }
     
-    public boolean atualizaCliente(Cliente cliente) {
+    public boolean atualizar(Cliente cliente) {
         String sql_query = "UPDATE clientes set nome=?, cpf=?, telefone=?, email=? where id=?";
         
         try {
