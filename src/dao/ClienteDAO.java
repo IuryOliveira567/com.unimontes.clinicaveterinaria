@@ -45,11 +45,11 @@ public class ClienteDAO {
     }
     
     public boolean apagar(Cliente cliente) {
-        String sql_query = "DELETE FROM clientes where nome=?";
-        
+        String sql_query = "DELETE FROM clientes WHERE id=?";
+  
         try {
             PreparedStatement pst = this.con.prepareStatement(sql_query);
-            String id = String.valueOf(cliente.getNome());
+            String id = String.valueOf(cliente.getId());
             pst.setString(1, id);
             pst.executeUpdate();
             return true;
