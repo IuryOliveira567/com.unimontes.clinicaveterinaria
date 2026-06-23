@@ -10,19 +10,32 @@ package model;
  */
 public class Consulta {
     private int id;
-    private String data;
-    private String hora;
-    private String animal;
-    private String veterinario;
+    private String data_consulta;
+    private String hora_consulta;
     private String descricao;
+    private int animal_id;
+    private int veterinario_id;
+    private int id_cliente;
     
-    public Consulta(int id, String data, String hora, String animal, String veterinario, String descricao) {
-        this.id = id;
-        this.data = data;
-        this.hora = hora;
-        this.animal = animal;
-        this.veterinario = veterinario;
+    public Consulta() {}
+    
+    public Consulta(String data_consulta, String hora_consulta, String descricao, int animal_id, int veterinario_id, int id_cliente) {
+        this.data_consulta = data_consulta;
+        this.hora_consulta = hora_consulta;
         this.descricao = descricao;
+        this.animal_id = animal_id;
+        this.veterinario_id = veterinario_id;
+        this.id_cliente = id_cliente;
+    }
+    
+    public Consulta(int id, String data_consulta, String hora_consulta, String descricao, int animal_id, int veterinario_id, int id_cliente) {
+        this.id = id;
+        this.data_consulta = data_consulta;
+        this.hora_consulta = hora_consulta;
+        this.descricao = descricao;
+        this.animal_id = animal_id;
+        this.veterinario_id = veterinario_id;
+        this.id_cliente = id_cliente;
     }
     
     public int getId() {
@@ -33,36 +46,36 @@ public class Consulta {
         this.id = id;
     }
     
-    public String getData() {
-        return this.data;
+    public String getDataConsulta() {
+        return this.data_consulta;
     }
     
-    public void setData(String data) {
-        this.data = data;
+    public void setDataConsulta(String data_consulta) {
+        this.data_consulta = data_consulta;
     }
     
-    public String getHora() {
-        return this.hora;
+    public String getHoraConsulta() {
+        return this.hora_consulta;
     }
     
-    public void setHora(String hora) {
-        this.hora = hora;
+    public void setHoraConsulta(String hora_consulta) {
+        this.hora_consulta = hora_consulta;
     }
     
-    public String animal() {
-        return this.animal;
+    public int getAnimalId() {
+        return this.animal_id;
     }
     
-    public void setAnimal(String animal) {
-        this.animal = animal;
+    public void setAnimalId(int animal_id) {
+        this.animal_id = animal_id;
     }
     
-    public String getVeterinario() {
-        return this.veterinario;
+    public int getVeterinarioId() {
+        return this.veterinario_id;
     }
     
-    public void setVeterinario(String veterinario) {
-        this.veterinario = veterinario;
+    public void setVeterinarioId(int veterinario_id) {
+        this.veterinario_id = veterinario_id;
     }
     
     public String getDescricao() {
@@ -71,5 +84,13 @@ public class Consulta {
     
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+    
+    public int getClienteId() {
+        return this.id_cliente;
+    }
+    
+    public void setClienteId(int id_cliente) {
+        this.id_cliente = id_cliente;
     }
 }
