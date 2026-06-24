@@ -5,6 +5,7 @@
 package view;
 import view.ClienteForm;
 import view.AnimalForm;
+import view.VeterinarioForm;
 /**
  *
  * @author admin
@@ -12,6 +13,7 @@ import view.AnimalForm;
 public class TelaPrincipalForm extends javax.swing.JFrame {
     private ClienteForm clienteForm;
     private AnimalForm animalForm;
+    private VeterinarioForm veterinarioForm;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPrincipalForm.class.getName());
 
     /**
@@ -21,6 +23,7 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
     public TelaPrincipalForm() {
         this.clienteForm = new ClienteForm();
         this.animalForm = new AnimalForm();
+        this.veterinarioForm = new VeterinarioForm();
         initComponents();
     }
 
@@ -114,6 +117,8 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
 
     private void CadastrosVeterinariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrosVeterinariosActionPerformed
         // TODO add your handling code here:
+        this.veterinarioForm.setVisible(true);
+        dispose();
     }//GEN-LAST:event_CadastrosVeterinariosActionPerformed
 
     private void CadastrosAnimaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrosAnimaisActionPerformed
