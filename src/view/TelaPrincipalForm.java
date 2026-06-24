@@ -4,12 +4,14 @@
  */
 package view;
 import view.ClienteForm;
+import view.AnimalForm;
 /**
  *
  * @author admin
  */
 public class TelaPrincipalForm extends javax.swing.JFrame {
     private ClienteForm clienteForm;
+    private AnimalForm animalForm;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPrincipalForm.class.getName());
 
     /**
@@ -18,6 +20,7 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
     
     public TelaPrincipalForm() {
         this.clienteForm = new ClienteForm();
+        this.animalForm = new AnimalForm();
         initComponents();
     }
 
@@ -59,6 +62,7 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
         jMenu2.add(CadastrosClientes);
 
         CadastrosAnimais.setText("Animais");
+        CadastrosAnimais.addActionListener(this::CadastrosAnimaisActionPerformed);
         jMenu2.add(CadastrosAnimais);
 
         CadastrosVeterinarios.setText("Veterinários");
@@ -111,6 +115,12 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
     private void CadastrosVeterinariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrosVeterinariosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CadastrosVeterinariosActionPerformed
+
+    private void CadastrosAnimaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrosAnimaisActionPerformed
+        // TODO add your handling code here:
+         this.animalForm.setVisible(true);
+         dispose();
+    }//GEN-LAST:event_CadastrosAnimaisActionPerformed
 
     /**
      * @param args the command line arguments
