@@ -14,6 +14,7 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
     private ClienteForm clienteForm;
     private AnimalForm animalForm;
     private VeterinarioForm veterinarioForm;
+    private ConsultaForm consultaForm;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPrincipalForm.class.getName());
 
     /**
@@ -24,6 +25,7 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
         this.clienteForm = new ClienteForm();
         this.animalForm = new AnimalForm();
         this.veterinarioForm = new VeterinarioForm();
+        this.consultaForm = new ConsultaForm();
         initComponents();
     }
 
@@ -77,6 +79,7 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
         jMenu3.setText("Consultas");
 
         ConsultasGerenciar.setText("Gerenciar");
+        ConsultasGerenciar.addActionListener(this::ConsultasGerenciarActionPerformed);
         jMenu3.add(ConsultasGerenciar);
 
         jMenuBar1.add(jMenu3);
@@ -126,6 +129,12 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
          this.animalForm.setVisible(true);
          dispose();
     }//GEN-LAST:event_CadastrosAnimaisActionPerformed
+
+    private void ConsultasGerenciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultasGerenciarActionPerformed
+        // TODO add your handling code here:
+        this.consultaForm.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ConsultasGerenciarActionPerformed
 
     /**
      * @param args the command line arguments
