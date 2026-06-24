@@ -3,19 +3,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
-
+import view.ClienteForm;
 /**
  *
  * @author admin
  */
 public class TelaPrincipalForm extends javax.swing.JFrame {
-    
+    private ClienteForm clienteForm;
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPrincipalForm.class.getName());
 
     /**
      * Creates new form TelaPrincipal
      */
+    
     public TelaPrincipalForm() {
+        this.clienteForm = new ClienteForm();
         initComponents();
     }
 
@@ -102,6 +104,8 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
 
     private void CadastrosClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrosClientesActionPerformed
         // TODO add your handling code here:
+         this.clienteForm.setVisible(true);
+         dispose();
     }//GEN-LAST:event_CadastrosClientesActionPerformed
 
     private void CadastrosVeterinariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrosVeterinariosActionPerformed
