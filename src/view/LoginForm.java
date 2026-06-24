@@ -4,7 +4,7 @@
  */
 package view;
 import controller.LoginController;
-import view.TelaPrincipal;
+import view.TelaPrincipalForm;
 /**
  *
  * @author admin
@@ -13,7 +13,7 @@ public class LoginForm extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginForm.class.getName());
     private LoginController loginController;
-    private TelaPrincipal telaPrincipal;
+    private TelaPrincipalForm telaPrincipalForm;
     private String login;
     private String senha;
     
@@ -23,7 +23,7 @@ public class LoginForm extends javax.swing.JFrame {
     public LoginForm()
     {
         this.loginController = new LoginController();
-        this.telaPrincipal = new TelaPrincipal();
+        this.telaPrincipalForm = new TelaPrincipalForm();
         this.login = login;
         this.senha = senha;
         initComponents();
@@ -124,7 +124,7 @@ public class LoginForm extends javax.swing.JFrame {
         this.senha = SenhaInput.getText();
         
         if(this.loginController.AutenticaUsuario(this.login, this.senha) != null) {
-           this.telaPrincipal.setVisible(true);
+           this.telaPrincipalForm.setVisible(true);
            dispose();
         } else {
             LabelLoginError.setText("Usuario ou Senha Incorreto!");            

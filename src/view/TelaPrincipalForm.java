@@ -8,14 +8,14 @@ package view;
  *
  * @author admin
  */
-public class TelaPrincipal extends javax.swing.JFrame {
+public class TelaPrincipalForm extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPrincipal.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPrincipalForm.class.getName());
 
     /**
      * Creates new form TelaPrincipal
      */
-    public TelaPrincipal() {
+    public TelaPrincipalForm() {
         initComponents();
     }
 
@@ -131,7 +131,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new TelaPrincipal().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new TelaPrincipalForm().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
