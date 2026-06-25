@@ -33,4 +33,8 @@ public class AnimalController {
     public boolean apagaAnimal(Animal animais) {
         return this.animalDAO.apagar(animais);
     }
+    
+    public List<Animal> obterAnimaisPorNome(String nome) {
+        return this.animalDAO.animaisPorCliente(nome);
+    }
 }

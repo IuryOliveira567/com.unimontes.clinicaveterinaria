@@ -15,10 +15,10 @@ import java.sql.ResultSet;
  * @author admin
  */
 public class AnimalDAO {
-   private Connection con;
+    private Connection con;
    
    
-   public AnimalDAO() {
+    public AnimalDAO() {
        try {
            this.con = Conexao.conectar();
        } catch(Exception e) {
@@ -26,7 +26,7 @@ public class AnimalDAO {
        }
    }
    
-   public boolean salvar(Animal animal) {
+    public boolean salvar(Animal animal) {
         String sql_query = "INSERT INTO animais(nome, sexo, idade, cliente_id, especie) VALUES(?, ?, ?, ?, ?)";
  
         try {
@@ -50,7 +50,7 @@ public class AnimalDAO {
         }
     }
    
-   public boolean apagar(Animal animal) {
+    public boolean apagar(Animal animal) {
         String sql_query = "DELETE FROM animais where id=?";
         
         try {
@@ -65,7 +65,7 @@ public class AnimalDAO {
         }
     }
    
-   public List<Animal> listar() {
+    public List<Animal> listar() {
         List<Animal> animais = new ArrayList<>();
         String sql_query = "SELECT * FROM animais";
         
@@ -94,7 +94,7 @@ public class AnimalDAO {
         return animais;
     }
    
-   public boolean atualizar(Animal animal) {
+    public boolean atualizar(Animal animal) {
         String sql_query = "UPDATE animais set nome=?, sexo=?, idade=?, cliente_id=?, especie=? where id=?";
         
         try {
@@ -114,5 +114,36 @@ public class AnimalDAO {
             System.out.println(e.getMessage());
             return false;
         }
+    }
+   
+    public List<Animal> animaisPorCliente(String nome) {
+        String sql_query = "SELECT a.id, a.nome, a.sexo, a.idade, a.cliente_id, a.especie, c.nome AS cliente from animais a INNER JOIN clientes c ON c.id = a.cliente_id WHERE c.nome=?";
+        
+        List<Animal> animais = new ArrayList<>();
+
+        try {
+            PreparedStatement pst = this.con.prepareStatement(sql_query);
+            pst.setString(1, nome);
+            ResultSet rs = pst.executeQuery();
+            
+            while(rs.next()) {
+
+                Animal c = new Animal();
+               
+                c.setId(rs.getInt("id"));
+                c.setNome(rs.getString("nome"));
+                c.setSexo(rs.getString("sexo"));
+                c.setIdade(rs.getInt("idade"));
+                c.setClienteId(rs.getInt("cliente_id"));
+                c.setEspecie(rs.getString("especie"));                
+                
+                animais.add(c);
+            }
+
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
+        return animais;
     }
 }
