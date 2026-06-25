@@ -27,17 +27,10 @@ public class RelatorioService {
         this.consultaController = new ConsultaController();
     }
 
-    public List<Animal> GeraAnimaisPorCliente(Cliente cliente) {
-        List<Animal> animalPorCliente = new ArrayList<>();
-        List<Animal> animais = this.animalController.listaAnimais();
-        
-        for(Animal animal: animais) {
-            if(animal.getClienteId() == cliente.getId()) {
-                animalPorCliente.add(animal);
-            }
-        }
-        
-        return animalPorCliente;
+    public List<Animal> GeraAnimaisPorCliente(String nome) {
+        List<Animal> result = this.animalController.obterAnimaisPorNome(nome);
+        System.out.println(result);
+        return result;
     }
     
     public List<Consulta> GeraConsultasPorVeterinario(Veterinario veterinario) {
