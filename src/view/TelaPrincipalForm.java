@@ -6,6 +6,7 @@ package view;
 import view.ClienteForm;
 import view.AnimalForm;
 import view.VeterinarioForm;
+import view.RelatorioForm;
 /**
  *
  * @author admin
@@ -15,6 +16,8 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
     private AnimalForm animalForm;
     private VeterinarioForm veterinarioForm;
     private ConsultaForm consultaForm;
+    private RelatorioForm relatorioForm;
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(TelaPrincipalForm.class.getName());
 
     /**
@@ -26,6 +29,8 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
         this.animalForm = new AnimalForm();
         this.veterinarioForm = new VeterinarioForm();
         this.consultaForm = new ConsultaForm();
+        this.relatorioForm = new RelatorioForm();
+        
         initComponents();
     }
 
@@ -87,6 +92,7 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
         jMenu4.setText("Relatórios");
 
         RelatoriosGerarRelatorios.setText("Gerar Relatório");
+        RelatoriosGerarRelatorios.addActionListener(this::RelatoriosGerarRelatoriosActionPerformed);
         jMenu4.add(RelatoriosGerarRelatorios);
 
         jMenuBar1.add(jMenu4);
@@ -135,6 +141,12 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
         this.consultaForm.setVisible(true);
         dispose();
     }//GEN-LAST:event_ConsultasGerenciarActionPerformed
+
+    private void RelatoriosGerarRelatoriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RelatoriosGerarRelatoriosActionPerformed
+        // TODO add your handling code here:
+        this.relatorioForm.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_RelatoriosGerarRelatoriosActionPerformed
 
     /**
      * @param args the command line arguments
