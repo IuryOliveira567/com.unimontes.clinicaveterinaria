@@ -5,6 +5,7 @@
 package view;
 import model.Veterinario;
 import controller.VeterinarioController;
+import java.awt.Color;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
@@ -25,6 +26,7 @@ public class VeterinarioForm extends javax.swing.JFrame {
         this.veterinarioController = new VeterinarioController();
         this.idSelecionado = idSelecionado;
         initComponents();
+        getContentPane().setBackground(new Color(245, 247, 250));
         carregaVeterinarios();
     }
 

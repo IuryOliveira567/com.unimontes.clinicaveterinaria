@@ -5,6 +5,7 @@
 package view;
 import controller.AnimalController;
 import controller.ClienteController;
+import java.awt.Color;
 import model.Animal;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -31,6 +32,8 @@ public class AnimalForm extends javax.swing.JFrame {
         this.idSelecionado = idSelecionado;
         
         initComponents();
+        getContentPane().setBackground(new Color(245, 247, 250));
+
         carregaAnimais();
     
         tabelaAnimais.getColumnModel().getColumn(0).setMinWidth(0);

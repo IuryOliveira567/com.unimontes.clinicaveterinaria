@@ -4,6 +4,7 @@
  */
 package view;
 import controller.LoginController;
+import java.awt.Color;
 import view.TelaPrincipalForm;
 /**
  *
@@ -27,6 +28,9 @@ public class LoginForm extends javax.swing.JFrame {
         this.login = login;
         this.senha = senha;
         initComponents();
+        
+        getContentPane().setBackground(new Color(245, 247, 250));
+
     }
 
     /**
@@ -48,22 +52,33 @@ public class LoginForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        LoginTituloLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        LoginTituloLabel.setText("SISTEMA CLÍNICA VETERINÁRIO");
+        LoginTituloLabel.setBackground(new java.awt.Color(46, 94, 170));
+        LoginTituloLabel.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        LoginTituloLabel.setForeground(new java.awt.Color(46, 94, 170));
+        LoginTituloLabel.setText("SISTEMA CLÍNICA VETERINÁRIA");
 
-        LoginLabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LoginLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LoginLabel.setForeground(new java.awt.Color(51, 51, 51));
         LoginLabel.setText("Login :");
 
+        SenhaLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        SenhaLabel.setForeground(new java.awt.Color(51, 51, 51));
         SenhaLabel.setText("Senha :");
 
+        LoginInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LoginInput.setForeground(new java.awt.Color(51, 51, 51));
         LoginInput.addActionListener(this::LoginInputActionPerformed);
 
-        LoginButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        LoginButton.setText("Login");
+        LoginButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LoginButton.setForeground(new java.awt.Color(51, 51, 51));
+        LoginButton.setText("Entrar");
         LoginButton.addActionListener(this::LoginButtonActionPerformed);
 
-        LabelLoginError.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelLoginError.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         LabelLoginError.setForeground(new java.awt.Color(255, 0, 0));
+
+        SenhaInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SenhaInput.setForeground(new java.awt.Color(51, 51, 51));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,43 +87,44 @@ public class LoginForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(SenhaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(LoginLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
-                        .addGap(47, 47, 47)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(LoginInput)
-                            .addComponent(SenhaInput, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)))
+                        .addGap(120, 120, 120)
+                        .addComponent(LoginTituloLabel))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
+                        .addGap(84, 84, 84)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SenhaLabel)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(LoginLabel)
+                                .addGap(33, 33, 33)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(LoginInput, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(SenhaInput, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(207, 207, 207)
                         .addComponent(LoginButton))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(108, 108, 108)
-                        .addComponent(LoginTituloLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(100, 100, 100)
+                        .addGap(149, 149, 149)
                         .addComponent(LabelLoginError, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(131, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
+                .addGap(50, 50, 50)
                 .addComponent(LoginTituloLabel)
-                .addGap(46, 46, 46)
+                .addGap(85, 85, 85)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LoginLabel)
                     .addComponent(LoginInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SenhaLabel)
                     .addComponent(SenhaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
+                .addGap(53, 53, 53)
                 .addComponent(LoginButton)
-                .addGap(18, 18, 18)
+                .addGap(28, 28, 28)
                 .addComponent(LabelLoginError)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         pack();
@@ -122,7 +138,7 @@ public class LoginForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.login = LoginInput.getText();
         this.senha = SenhaInput.getText();
-        
+           
         if(this.loginController.AutenticaUsuario(this.login, this.senha) != null) {
            this.telaPrincipalForm.setVisible(true);
            dispose();

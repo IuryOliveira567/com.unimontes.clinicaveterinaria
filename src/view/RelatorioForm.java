@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package view;
+import java.awt.Color;
 import services.RelatorioService;
 import model.Animal;
 import model.Consulta;
@@ -34,6 +35,8 @@ public class RelatorioForm extends javax.swing.JFrame {
         this.relatorioService = new RelatorioService();
         
         initComponents();
+        getContentPane().setBackground(new Color(245, 247, 250));
+        
         RelatorioLabel2.setVisible(false);
         RelatorioInput2.setVisible(false);
         CamposVaziosLabel.setVisible(false);

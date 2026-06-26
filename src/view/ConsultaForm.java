@@ -5,6 +5,7 @@
 package view;
 import model.Consulta;
 import controller.ConsultaController;
+import java.awt.Color;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
@@ -26,6 +27,8 @@ public class ConsultaForm extends javax.swing.JFrame {
         this.idSelecionado = idSelecionado;
         
         initComponents();
+        getContentPane().setBackground(new Color(245, 247, 250));
+
         carregaConsultas();
         
         tabelaConsultas.getColumnModel().getColumn(0).setMinWidth(0);

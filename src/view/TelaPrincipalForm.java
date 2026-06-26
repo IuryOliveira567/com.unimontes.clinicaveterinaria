@@ -7,6 +7,7 @@ import view.ClienteForm;
 import view.AnimalForm;
 import view.VeterinarioForm;
 import view.RelatorioForm;
+import java.awt.Color;
 /**
  *
  * @author admin
@@ -32,6 +33,7 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
         this.relatorioForm = new RelatorioForm();
         
         initComponents();
+        getContentPane().setBackground(new Color(245, 247, 250));
     }
 
     /**
@@ -56,6 +58,7 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
         RelatoriosGerarRelatorios = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(46, 94, 170));
 
         jMenu1.setText("Arquivo");
 
@@ -103,11 +106,11 @@ public class TelaPrincipalForm extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 591, Short.MAX_VALUE)
+            .addGap(0, 783, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 372, Short.MAX_VALUE)
+            .addGap(0, 485, Short.MAX_VALUE)
         );
 
         pack();

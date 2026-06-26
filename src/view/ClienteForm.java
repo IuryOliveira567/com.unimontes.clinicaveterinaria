@@ -6,6 +6,7 @@ package view;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import controller.ClienteController;
+import java.awt.Color;
 import java.util.List;
 import model.Cliente;
 import javax.swing.JOptionPane;
@@ -26,6 +27,8 @@ public class ClienteForm extends javax.swing.JFrame {
         this.clienteController = new ClienteController();
         this.idSelecionado = idSelecionado;
         initComponents();
+        getContentPane().setBackground(new Color(245, 247, 250));
+
         carregaClientes();
         
         tabelaClientes.getColumnModel().getColumn(0).setMinWidth(0);
