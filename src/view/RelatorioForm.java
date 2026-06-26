@@ -173,7 +173,6 @@ public class RelatorioForm extends javax.swing.JFrame {
             
             JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(animais);
             Map<String, Object> parametros = new HashMap<>();
-            //parametros.put("nomeCliente", nome);
             
             InputStream reportStream = getClass().getResourceAsStream("/relatorios/AnimaisPorCliente.jasper");
             
