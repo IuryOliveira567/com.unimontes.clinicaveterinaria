@@ -26,29 +26,34 @@
           <Group type="102" attributes="0">
               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                      <Component id="HoraConsultaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="DescricaoLabel" min="-2" pref="84" max="-2" attributes="0"/>
-                      <Component id="AnimaLIDLabel" min="-2" pref="76" max="-2" attributes="0"/>
-                      <Component id="VeterinarioIDLabel" min="-2" pref="84" max="-2" attributes="0"/>
-                      <Component id="ClienteIDLabel" min="-2" pref="76" max="-2" attributes="0"/>
-                      <Component id="AgendarButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="DataConsultaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="AtualizarButton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
-                      <Component id="ExcluirButton" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                              <Component id="HoraConsultaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="DescricaoLabel" min="-2" pref="84" max="-2" attributes="0"/>
+                              <Component id="AnimaLIDLabel" min="-2" pref="76" max="-2" attributes="0"/>
+                              <Component id="VeterinarioIDLabel" min="-2" pref="84" max="-2" attributes="0"/>
+                              <Component id="ClienteIDLabel" min="-2" pref="76" max="-2" attributes="0"/>
+                              <Component id="AgendarButton" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="DataConsultaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="AtualizarButton" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="22" max="32767" attributes="0"/>
+                              <Component id="ExcluirButton" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="DescricaoInput" alignment="0" max="32767" attributes="0"/>
+                          <Component id="AnimalIDInput" alignment="0" max="32767" attributes="0"/>
+                          <Component id="VeterinarioIDInput" alignment="0" max="32767" attributes="0"/>
+                          <Component id="ClienteIDInput" alignment="0" max="32767" attributes="0"/>
+                          <Component id="HoraConsultaInput" max="32767" attributes="0"/>
+                          <Component id="DataConsultaInput" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Component id="DescricaoInput" alignment="0" max="32767" attributes="0"/>
-                  <Component id="AnimalIDInput" alignment="0" max="32767" attributes="0"/>
-                  <Component id="VeterinarioIDInput" alignment="0" max="32767" attributes="0"/>
-                  <Component id="ClienteIDInput" alignment="0" max="32767" attributes="0"/>
-                  <Component id="HoraConsultaInput" max="32767" attributes="0"/>
-                  <Component id="DataConsultaInput" max="32767" attributes="0"/>
+                  <Component id="VoltarButton" min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="56" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="568" max="-2" attributes="0"/>
@@ -61,7 +66,9 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <Component id="VoltarButton" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="DataConsultaLabel" min="-2" max="-2" attributes="0"/>
                           <Component id="DataConsultaInput" min="-2" max="-2" attributes="0"/>
@@ -203,6 +210,16 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExcluirButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="VoltarButton">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/resources/images/left-arrow.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VoltarButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

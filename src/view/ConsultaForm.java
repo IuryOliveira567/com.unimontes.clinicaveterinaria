@@ -8,6 +8,7 @@ import controller.ConsultaController;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JOptionPane;
+import view.TelaPrincipalForm;
 /**
  *
  * @author admin
@@ -63,6 +64,7 @@ public class ConsultaForm extends javax.swing.JFrame {
         AgendarButton = new javax.swing.JButton();
         AtualizarButton = new javax.swing.JButton();
         ExcluirButton = new javax.swing.JButton();
+        VoltarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,6 +111,9 @@ public class ConsultaForm extends javax.swing.JFrame {
         ExcluirButton.setText("Excluir");
         ExcluirButton.addActionListener(this::ExcluirButtonActionPerformed);
 
+        VoltarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/left-arrow.png"))); // NOI18N
+        VoltarButton.addActionListener(this::VoltarButtonActionPerformed);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -116,26 +121,29 @@ public class ConsultaForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(HoraConsultaLabel)
-                        .addComponent(DescricaoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(AnimaLIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(VeterinarioIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ClienteIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(AgendarButton, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(DataConsultaLabel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(AtualizarButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                        .addComponent(ExcluirButton))
-                    .addComponent(DescricaoInput)
-                    .addComponent(AnimalIDInput)
-                    .addComponent(VeterinarioIDInput)
-                    .addComponent(ClienteIDInput)
-                    .addComponent(HoraConsultaInput)
-                    .addComponent(DataConsultaInput))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(HoraConsultaLabel)
+                                .addComponent(DescricaoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AnimaLIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(VeterinarioIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(ClienteIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AgendarButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(DataConsultaLabel))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(AtualizarButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                                .addComponent(ExcluirButton))
+                            .addComponent(DescricaoInput)
+                            .addComponent(AnimalIDInput)
+                            .addComponent(VeterinarioIDInput)
+                            .addComponent(ClienteIDInput)
+                            .addComponent(HoraConsultaInput)
+                            .addComponent(DataConsultaInput)))
+                    .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
@@ -145,7 +153,9 @@ public class ConsultaForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(122, 122, 122)
+                        .addGap(39, 39, 39)
+                        .addComponent(VoltarButton)
+                        .addGap(60, 60, 60)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(DataConsultaLabel)
                             .addComponent(DataConsultaInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -264,6 +274,12 @@ public class ConsultaForm extends javax.swing.JFrame {
         limparCampos();
     }//GEN-LAST:event_ExcluirButtonActionPerformed
 
+    private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed
+        // TODO add your handling code here:
+        new TelaPrincipalForm().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_VoltarButtonActionPerformed
+
     private void limparCampos() {
         HoraConsultaInput.setText("");
         DataConsultaInput.setText("");
@@ -332,6 +348,7 @@ public class ConsultaForm extends javax.swing.JFrame {
     private javax.swing.JLabel HoraConsultaLabel;
     private javax.swing.JTextField VeterinarioIDInput;
     private javax.swing.JLabel VeterinarioIDLabel;
+    private javax.swing.JButton VoltarButton;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabelaConsultas;
     // End of variables declaration//GEN-END:variables

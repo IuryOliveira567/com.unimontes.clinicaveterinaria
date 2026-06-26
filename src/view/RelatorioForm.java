@@ -15,6 +15,7 @@ import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 import net.sf.jasperreports.extensions.ExtensionsEnvironment;
 import java.io.InputStream;
+import view.TelaPrincipalForm;
 /**
  *
  * @author admin
@@ -79,6 +80,7 @@ public class RelatorioForm extends javax.swing.JFrame {
         RelatorioLabel1 = new javax.swing.JLabel();
         RelatorioLabel2 = new javax.swing.JLabel();
         CamposVaziosLabel = new javax.swing.JLabel();
+        VoltarButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,6 +100,9 @@ public class RelatorioForm extends javax.swing.JFrame {
 
         CamposVaziosLabel.setForeground(new java.awt.Color(255, 0, 0));
         CamposVaziosLabel.setText("Campos vazios não permitidos");
+
+        VoltarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/left-arrow.png"))); // NOI18N
+        VoltarButton.addActionListener(this::VoltarButtonActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -121,13 +126,18 @@ public class RelatorioForm extends javax.swing.JFrame {
                         .addComponent(TitloRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(178, 178, 178)
-                        .addComponent(GerarRelatorioButton)))
+                        .addComponent(GerarRelatorioButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(36, 36, 36)
+                        .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(184, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(23, 23, 23)
+                .addComponent(VoltarButton)
+                .addGap(27, 27, 27)
                 .addComponent(TitloRelatorio)
                 .addGap(36, 36, 36)
                 .addComponent(RelatorioSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -143,7 +153,7 @@ public class RelatorioForm extends javax.swing.JFrame {
                 .addComponent(GerarRelatorioButton)
                 .addGap(35, 35, 35)
                 .addComponent(CamposVaziosLabel)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         pack();
@@ -240,6 +250,12 @@ public class RelatorioForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_GerarRelatorioButtonActionPerformed
 
+    private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed
+        // TODO add your handling code here:
+        new TelaPrincipalForm().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_VoltarButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -274,5 +290,6 @@ public class RelatorioForm extends javax.swing.JFrame {
     private javax.swing.JLabel RelatorioLabel2;
     private javax.swing.JComboBox<String> RelatorioSelect;
     private javax.swing.JLabel TitloRelatorio;
+    private javax.swing.JButton VoltarButton;
     // End of variables declaration//GEN-END:variables
 }
