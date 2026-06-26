@@ -28,34 +28,39 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="HoraConsultaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="DescricaoLabel" min="-2" pref="84" max="-2" attributes="0"/>
-                              <Component id="AnimaLIDLabel" min="-2" pref="76" max="-2" attributes="0"/>
-                              <Component id="VeterinarioIDLabel" min="-2" pref="84" max="-2" attributes="0"/>
-                              <Component id="ClienteIDLabel" min="-2" pref="76" max="-2" attributes="0"/>
-                              <Component id="AgendarButton" alignment="1" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="HoraConsultaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="DescricaoLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="AnimaLIDLabel" alignment="0" min="-2" pref="84" max="-2" attributes="0"/>
+                          <Component id="ClienteIDLabel" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
                           <Component id="DataConsultaLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                              <Component id="AgendarButton" min="-2" max="-2" attributes="0"/>
+                              <Component id="VeterinarioIDLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="DescricaoInput" alignment="0" pref="190" max="32767" attributes="0"/>
+                                  <Component id="AnimalIDInput" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="VeterinarioIDInput" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="ClienteIDInput" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="HoraConsultaInput" max="32767" attributes="0"/>
+                                  <Component id="DataConsultaInput" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                               <Component id="AtualizarButton" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="22" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Component id="ExcluirButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="DescricaoInput" alignment="0" max="32767" attributes="0"/>
-                          <Component id="AnimalIDInput" alignment="0" max="32767" attributes="0"/>
-                          <Component id="VeterinarioIDInput" alignment="0" max="32767" attributes="0"/>
-                          <Component id="ClienteIDInput" alignment="0" max="32767" attributes="0"/>
-                          <Component id="HoraConsultaInput" max="32767" attributes="0"/>
-                          <Component id="DataConsultaInput" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <Component id="VoltarButton" min="-2" pref="52" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="56" max="32767" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="568" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
@@ -118,31 +123,67 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="DataConsultaLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="33" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Data Consulta : "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="HoraConsultaLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="33" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Hora Consulta : "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="DescricaoLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="33" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o :   "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="AnimaLIDLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="33" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Animal ID : "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="VeterinarioIDLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="33" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Veterinario ID : "/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="ClienteIDLabel">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="33" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Cliente ID : "/>
       </Properties>
     </Component>
@@ -190,6 +231,12 @@
     </Container>
     <Component class="javax.swing.JButton" name="AgendarButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="33" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Agendar"/>
       </Properties>
       <Events>
@@ -198,6 +245,12 @@
     </Component>
     <Component class="javax.swing.JButton" name="AtualizarButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="33" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Atualizar"/>
       </Properties>
       <Events>
@@ -206,6 +259,12 @@
     </Component>
     <Component class="javax.swing.JButton" name="ExcluirButton">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="33" green="33" red="33" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Excluir"/>
       </Properties>
       <Events>

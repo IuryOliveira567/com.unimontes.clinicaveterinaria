@@ -71,16 +71,28 @@ public class ConsultaForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        DataConsultaLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DataConsultaLabel.setForeground(new java.awt.Color(51, 51, 51));
         DataConsultaLabel.setText("Data Consulta : ");
 
+        HoraConsultaLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        HoraConsultaLabel.setForeground(new java.awt.Color(51, 51, 51));
         HoraConsultaLabel.setText("Hora Consulta : ");
 
+        DescricaoLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        DescricaoLabel.setForeground(new java.awt.Color(51, 51, 51));
         DescricaoLabel.setText("Descrição :   ");
 
+        AnimaLIDLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        AnimaLIDLabel.setForeground(new java.awt.Color(51, 51, 51));
         AnimaLIDLabel.setText("Animal ID : ");
 
+        VeterinarioIDLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        VeterinarioIDLabel.setForeground(new java.awt.Color(51, 51, 51));
         VeterinarioIDLabel.setText("Veterinario ID : ");
 
+        ClienteIDLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ClienteIDLabel.setForeground(new java.awt.Color(51, 51, 51));
         ClienteIDLabel.setText("Cliente ID : ");
 
         HoraConsultaInput.addActionListener(this::HoraConsultaInputActionPerformed);
@@ -105,12 +117,18 @@ public class ConsultaForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelaConsultas);
 
+        AgendarButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        AgendarButton.setForeground(new java.awt.Color(51, 51, 51));
         AgendarButton.setText("Agendar");
         AgendarButton.addActionListener(this::AgendarButtonActionPerformed);
 
+        AtualizarButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        AtualizarButton.setForeground(new java.awt.Color(51, 51, 51));
         AtualizarButton.setText("Atualizar");
         AtualizarButton.addActionListener(this::AtualizarButtonActionPerformed);
 
+        ExcluirButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ExcluirButton.setForeground(new java.awt.Color(51, 51, 51));
         ExcluirButton.setText("Excluir");
         ExcluirButton.addActionListener(this::ExcluirButtonActionPerformed);
 
@@ -126,28 +144,31 @@ public class ConsultaForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(HoraConsultaLabel)
-                                .addComponent(DescricaoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(AnimaLIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(VeterinarioIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(ClienteIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(AgendarButton, javax.swing.GroupLayout.Alignment.TRAILING))
-                            .addComponent(DataConsultaLabel))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(HoraConsultaLabel)
+                            .addComponent(DescricaoLabel)
+                            .addComponent(AnimaLIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ClienteIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DataConsultaLabel)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(AgendarButton)
+                                .addComponent(VeterinarioIDLabel)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(DescricaoInput, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                    .addComponent(AnimalIDInput)
+                                    .addComponent(VeterinarioIDInput)
+                                    .addComponent(ClienteIDInput)
+                                    .addComponent(HoraConsultaInput)
+                                    .addComponent(DataConsultaInput)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
                                 .addComponent(AtualizarButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                                .addComponent(ExcluirButton))
-                            .addComponent(DescricaoInput)
-                            .addComponent(AnimalIDInput)
-                            .addComponent(VeterinarioIDInput)
-                            .addComponent(ClienteIDInput)
-                            .addComponent(HoraConsultaInput)
-                            .addComponent(DataConsultaInput)))
+                                .addGap(14, 14, 14)
+                                .addComponent(ExcluirButton))))
                     .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
