@@ -28,38 +28,14 @@ public class RelatorioService {
     }
 
     public List<Animal> GeraAnimaisPorCliente(String nome) {
-        List<Animal> result = this.animalController.obterAnimaisPorNome(nome);
-        System.out.println(result);
-        return result;
+        return this.animalController.obterAnimaisPorNome(nome);
     }
     
-    public List<Consulta> GeraConsultasPorVeterinario(Veterinario veterinario) {
-        List<Consulta> consultasPorVeterinario = new ArrayList<>();
-        List<Consulta> consultas = this.consultaController.listaConsultas();
-        
-        for(Consulta consulta: consultas) {
-            if(consulta.getVeterinarioId() == veterinario.getId()) {
-                consultasPorVeterinario.add(consulta);
-            }
-        }
-        
-        return consultasPorVeterinario;
+    public List<Consulta> GeraConsultasPorVeterinario(String veterinario) {
+        return this.consultaController.obterConsultasPorVeterinario(veterinario);
     }
     
     public List<Consulta> GeraConsultasPorPeriodo(String data_inicial, String data_final) {
-        List<Consulta> consultas = consultaController.listaConsultas();
-        List<Consulta> consultas_por_data = new ArrayList<>();
-        
-        LocalDate dataInicial = LocalDate.parse(data_inicial);
-        LocalDate dataFinal = LocalDate.parse(data_final);
-        
-        for(Consulta consulta: consultas) {
-            LocalDate dataConsulta = LocalDate.parse(consulta.getDataConsulta());
-            if(!dataConsulta.isBefore(dataInicial) && !dataConsulta.isAfter(dataFinal)) {
-                consultas_por_data.add(consulta);
-            }
-        }
-        
-        return consultas_por_data;
+        return this.consultaController.obterConsultasPorPeriodo(data_inicial, data_final);
     }
 }
