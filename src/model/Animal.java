@@ -15,6 +15,7 @@ public class Animal {
     private int idade;
     private int cliente_id;
     private String especie;
+    private String cliente;
 
     
     public Animal() {}
@@ -34,6 +35,16 @@ public class Animal {
         this.idade = idade;
         this.cliente_id = cliente_id;
         this.especie = especie;
+    }
+    
+    public Animal(int id, String nome, String sexo, int idade, int cliente_id, String especie, String cliente) {
+        this.id = id;
+        this.nome = nome;
+        this.sexo = sexo;
+        this.idade = idade;
+        this.cliente_id = cliente_id;
+        this.especie = especie;
+        this.cliente = cliente;
     }
     
     public int getId() {
@@ -84,4 +95,13 @@ public class Animal {
     public void setClienteId(int cliente_id) {
         this.cliente_id = cliente_id;
     }   
+    
+    public String getCliente() {
+        return this.cliente;
+    }
+    
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+    
 }

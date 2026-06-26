@@ -135,8 +135,9 @@ public class AnimalDAO {
                 c.setSexo(rs.getString("sexo"));
                 c.setIdade(rs.getInt("idade"));
                 c.setClienteId(rs.getInt("cliente_id"));
-                c.setEspecie(rs.getString("especie"));                
-                
+                c.setEspecie(rs.getString("especie"));
+                c.setCliente(rs.getString("cliente"));
+       
                 animais.add(c);
             }
 
