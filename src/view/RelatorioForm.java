@@ -5,6 +5,7 @@
 package view;
 import services.RelatorioService;
 import model.Animal;
+import model.Consulta;
 import java.util.List;
 import java.util.Map;
 import java.util.HashMap;
@@ -192,9 +193,23 @@ public class RelatorioForm extends javax.swing.JFrame {
                 return;
             }
             
-            this.relatorioService.GeraConsultasPorVeterinario(veterinario);
+            List<Consulta> consultas = this.relatorioService.GeraConsultasPorVeterinario(veterinario);
             CamposVaziosLabel.setVisible(false);
             RelatorioInput1.setText("");
+            
+            JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(consultas);
+            Map<String, Object> parametros = new HashMap<>();
+            
+            InputStream reportStream = getClass().getResourceAsStream("/relatorios/ConsultasPorVeterinaio.jasper");
+            
+            try {
+               JasperReport jasperReport = (JasperReport) JRLoader.loadObject(reportStream);
+               JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, dataSource);
+               JasperViewer.viewReport(jasperPrint, false);            
+            } catch(Exception e) {
+               System.out.println(e.getMessage());
+            }
+            
         } else if(this.opcao.equals("Consultas Por Período")) {
             String data_inicial = RelatorioInput1.getText();
             String data_final = RelatorioInput2.getText();
