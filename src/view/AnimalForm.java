@@ -69,24 +69,50 @@ public class AnimalForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        NomeLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        NomeLabel.setForeground(new java.awt.Color(51, 51, 51));
         NomeLabel.setText("Nome :");
 
+        SexoLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        SexoLabel.setForeground(new java.awt.Color(51, 51, 51));
         SexoLabel.setText("Sexo :");
 
+        IdadeLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        IdadeLabel.setForeground(new java.awt.Color(51, 51, 51));
         IdadeLabel.setText("Idade :");
 
+        ClienteIDLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ClienteIDLabel.setForeground(new java.awt.Color(51, 51, 51));
         ClienteIDLabel.setText("Cliente ID :");
 
+        EspecieLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        EspecieLabel.setForeground(new java.awt.Color(51, 51, 51));
         EspecieLabel.setText("Especie : ");
 
+        NomeInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         NomeInput.addActionListener(this::NomeInputActionPerformed);
 
+        SexoInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        IdadeInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        ClienteIDInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        EspecieInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        EspecieInput.addActionListener(this::EspecieInputActionPerformed);
+
+        CadastrarButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CadastrarButton.setForeground(new java.awt.Color(51, 51, 51));
         CadastrarButton.setText("Cadastrar");
         CadastrarButton.addActionListener(this::CadastrarButtonActionPerformed);
 
+        AtualizarButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        AtualizarButton.setForeground(new java.awt.Color(51, 51, 51));
         AtualizarButton.setText("Atualizar");
         AtualizarButton.addActionListener(this::AtualizarButtonActionPerformed);
 
+        ExcluirButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ExcluirButton.setForeground(new java.awt.Color(51, 51, 51));
         ExcluirButton.setText("Excluir");
         ExcluirButton.addActionListener(this::ExcluirButtonActionPerformed);
 
@@ -118,36 +144,39 @@ public class AnimalForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
+                        .addGap(58, 58, 58)
                         .addComponent(CadastrarButton)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(AtualizarButton)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(ExcluirButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(49, 49, 49)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(NomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                                    .addComponent(SexoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(IdadeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(VoltarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(EspecieLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ClienteIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(IdadeInput)
-                            .addComponent(ClienteIDInput)
-                            .addComponent(EspecieInput)
-                            .addComponent(SexoInput)
-                            .addComponent(NomeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(IdadeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addComponent(EspecieLabel)
+                                    .addGap(13, 13, 13))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(49, 49, 49)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(ClienteIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(NomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(VoltarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(SexoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(IdadeLabel)))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addComponent(ClienteIDInput, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(SexoInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(NomeInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EspecieInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(42, 42, 42)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,7 +203,7 @@ public class AnimalForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EspecieLabel)
                     .addComponent(EspecieInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(46, 46, 46)
+                .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(CadastrarButton)
                     .addComponent(AtualizarButton)
@@ -269,6 +298,10 @@ public class AnimalForm extends javax.swing.JFrame {
         new TelaPrincipalForm().setVisible(true);
         dispose();
     }//GEN-LAST:event_VoltarButtonActionPerformed
+
+    private void EspecieInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspecieInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EspecieInputActionPerformed
 
     private void limparCampos() {
         NomeInput.setText("");
