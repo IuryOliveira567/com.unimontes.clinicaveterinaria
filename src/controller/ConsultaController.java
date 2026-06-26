@@ -36,4 +36,8 @@ public class ConsultaController {
     public List<Consulta> obterConsultasPorVeterinario(String veterinario) {
         return this.consultaDAO.ConsultasPorVeterinario(veterinario);
     }
+    
+    public List<Consulta> obterConsultasPorPeriodo(String data_inicial, String data_final) {
+        return this.consultaDAO.ConsultasPorPeriodo(data_inicial, data_final);
+    }
 }

@@ -144,4 +144,38 @@ public class ConsultaDAO {
         
         return consultas;
     }
+    
+    public List<Consulta> ConsultasPorPeriodo(String data_inicial, String data_final) {
+            
+        String sql_query = "SELECT co.id, co.data_consulta, co.hora_consulta, co.descricao, co.animal_id, co.veterinario_id, co.cliente_id, a.nome AS animal, c.nome AS cliente, v.nome AS veterinario FROM consultas co INNER JOIN animais a ON a.id=co.animal_id INNER JOIN clientes c ON c.id=co.cliente_id INNER JOIN veterinarios v ON v.id=co.veterinario_id WHERE co.data_consulta BETWEEN ? AND ?";
+        
+        List<Consulta> consultas = new ArrayList<>();
+
+        try {
+            PreparedStatement pst = this.con.prepareStatement(sql_query);
+            pst.setString(1, data_inicial);
+            pst.setString(2, data_final);
+                        
+            ResultSet rs = pst.executeQuery();
+
+            while(rs.next()) {
+
+                Consulta c = new Consulta();
+               
+                c.setId(rs.getInt("id"));
+                c.setDataConsulta(rs.getString("data_consulta"));
+                c.setHoraConsulta(rs.getString("hora_consulta"));
+                c.setDescricao(rs.getString("descricao"));
+                c.setAnimalId(rs.getInt("animal_id"));
+                c.setVeterinarioId(rs.getInt("veterinario_id"));
+                c.setClienteId(rs.getInt("cliente_id"));  
+                consultas.add(c);
+            }
+
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
+        return consultas;
+    }
 }
