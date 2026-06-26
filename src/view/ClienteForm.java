@@ -62,26 +62,54 @@ public class ClienteForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        NomeLabel.setBackground(new java.awt.Color(51, 51, 51));
+        NomeLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        NomeLabel.setForeground(new java.awt.Color(51, 51, 51));
         NomeLabel.setText("Nome :");
 
+        CPFLabel.setBackground(new java.awt.Color(51, 51, 51));
+        CPFLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CPFLabel.setForeground(new java.awt.Color(51, 51, 51));
         CPFLabel.setText("CPF :");
 
+        TelefoneLabel.setBackground(new java.awt.Color(51, 51, 51));
+        TelefoneLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        TelefoneLabel.setForeground(new java.awt.Color(51, 51, 51));
         TelefoneLabel.setText("Telefone :");
 
+        EmailLabel.setBackground(new java.awt.Color(51, 51, 51));
+        EmailLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        EmailLabel.setForeground(new java.awt.Color(51, 51, 51));
         EmailLabel.setText("Email : ");
 
+        NomeInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        NomeInput.addActionListener(this::NomeInputActionPerformed);
+
+        CPFInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        TelefoneInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        EmailInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        EmailInput.addActionListener(this::EmailInputActionPerformed);
+
+        CadastrarButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CadastrarButton.setForeground(new java.awt.Color(51, 51, 51));
         CadastrarButton.setText("Cadastrar");
         CadastrarButton.addActionListener(this::CadastrarButtonActionPerformed);
 
+        AtualizarButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        AtualizarButton.setForeground(new java.awt.Color(51, 51, 51));
         AtualizarButton.setText("Atualizar");
         AtualizarButton.addActionListener(this::AtualizarButtonActionPerformed);
 
+        jScrollPane1.setForeground(new java.awt.Color(51, 51, 51));
         jScrollPane1.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
                 jScrollPane1ComponentHidden(evt);
             }
         });
 
+        tabelaClientes.setForeground(new java.awt.Color(51, 51, 51));
         tabelaClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -100,6 +128,8 @@ public class ClienteForm extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tabelaClientes);
 
+        ExcluirButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ExcluirButton.setForeground(new java.awt.Color(51, 51, 51));
         ExcluirButton.setText("Excluir");
         ExcluirButton.addActionListener(this::ExcluirButtonActionPerformed);
 
@@ -113,31 +143,31 @@ public class ClienteForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
+                        .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(CPFLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(TelefoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(EmailLabel))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(NomeLabel)
-                                    .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(25, 25, 25)))
-                        .addGap(32, 32, 32)
+                                .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TelefoneLabel)
+                                    .addComponent(CPFLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(EmailLabel)
+                                    .addComponent(NomeLabel))
+                                .addGap(26, 26, 26)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NomeInput, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                            .addComponent(NomeInput, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                             .addComponent(CPFInput)
                             .addComponent(TelefoneInput)
                             .addComponent(EmailInput)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
+                        .addGap(52, 52, 52)
                         .addComponent(CadastrarButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(AtualizarButton)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(ExcluirButton)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -257,6 +287,14 @@ public class ClienteForm extends javax.swing.JFrame {
         new TelaPrincipalForm().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_VoltarButtonActionPerformed
+
+    private void EmailInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EmailInputActionPerformed
+
+    private void NomeInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NomeInputActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NomeInputActionPerformed
     
     public boolean verificaCPF(String cpf) {
         for(int i = 0; i < this.tabelaClientes.getRowCount(); i++) {
