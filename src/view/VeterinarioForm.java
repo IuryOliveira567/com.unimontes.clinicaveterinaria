@@ -54,22 +54,38 @@ public class VeterinarioForm extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        NomeLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        NomeLabel.setForeground(new java.awt.Color(51, 51, 51));
         NomeLabel.setText("Nome :");
 
+        CRMVLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CRMVLabel.setForeground(new java.awt.Color(51, 51, 51));
         CRMVLabel.setText("CRMV : ");
 
+        TelefoneLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        TelefoneLabel.setForeground(new java.awt.Color(51, 51, 51));
         TelefoneLabel.setText("Telefone :");
 
+        NomeInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         NomeInput.addActionListener(this::NomeInputActionPerformed);
 
+        CRMVInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        TelefoneInput.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         TelefoneInput.addActionListener(this::TelefoneInputActionPerformed);
 
+        CadastrarButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        CadastrarButton.setForeground(new java.awt.Color(51, 51, 51));
         CadastrarButton.setText("Cadastrar");
         CadastrarButton.addActionListener(this::CadastrarButtonActionPerformed);
 
+        AtualizarButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        AtualizarButton.setForeground(new java.awt.Color(51, 51, 51));
         AtualizarButton.setText("Atualizar");
         AtualizarButton.addActionListener(this::AtualizarButtonActionPerformed);
 
+        ExcluirButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ExcluirButton.setForeground(new java.awt.Color(51, 51, 51));
         ExcluirButton.setText("Excluir");
         ExcluirButton.addActionListener(this::ExcluirButtonActionPerformed);
 
@@ -102,31 +118,32 @@ public class VeterinarioForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(TelefoneLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(TelefoneInput, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(CRMVLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(CRMVInput, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(TelefoneLabel)
+                                .addGap(5, 5, 5)
+                                .addComponent(TelefoneInput))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addComponent(CRMVLabel)
+                                .addGap(16, 16, 16)
+                                .addComponent(CRMVInput))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(NomeLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(NomeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(CadastrarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(AtualizarButton)
-                                .addGap(12, 12, 12)
-                                .addComponent(ExcluirButton))))
+                                .addComponent(NomeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(CadastrarButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(AtualizarButton)
+                        .addGap(12, 12, 12)
+                        .addComponent(ExcluirButton)))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
