@@ -1,0 +1,74 @@
+<!-- Created with Jaspersoft Studio version 7.0.6.final using JasperReports Library version 7.0.6-5d2a603fdc6b3db8f842a83383e594f41891534d  -->
+<jasperReport name="AnimaisPorCliente" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="344df542-b31f-472e-bc6b-7b8c4a3b2bb1">
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<query language="sql"><![CDATA[]]></query>
+	<field name="dataConsulta" class="java.lang.String"/>
+	<field name="horaConsulta" class="java.lang.String"/>
+	<field name="descricao" class="java.lang.String"/>
+	<field name="animal" class="java.lang.String"/>
+	<field name="cliente" class="java.lang.String"/>
+	<field name="veterinario" class="java.lang.String"/>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="4e78c706-d438-4b9d-b790-c90d45f6f7f7" x="170" y="30" width="250" height="30" fontSize="14.0">
+			<text><![CDATA[Relatório de Consultas Por Período]]></text>
+			<property name="com.jaspersoft.studio.unit.width" value="px"/>
+		</element>
+	</title>
+	<pageHeader height="35" splitType="Stretch"/>
+	<columnHeader height="61" splitType="Stretch">
+		<element kind="staticText" uuid="b129eeff-091e-447a-bb93-c5920714bae2" x="0" y="15" width="80" height="30">
+			<text><![CDATA[Data da Consulta]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="efc12b26-4026-4474-ab3f-bc66ae7c587b"/>
+		</element>
+		<element kind="staticText" uuid="9d7f6c1d-e9b4-452d-9298-01d82597f863" x="80" y="15" width="99" height="30">
+			<text><![CDATA[Hora da Consulta]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e8ab625-a287-4b69-8149-7d857089cd14"/>
+		</element>
+		<element kind="staticText" uuid="1f72d398-0aaa-4bf9-a9f4-3eb7d2ae9607" x="180" y="15" width="99" height="30">
+			<text><![CDATA[Descrição]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="74b3e0a8-15d4-441b-9001-15152ff54510"/>
+		</element>
+		<element kind="staticText" uuid="e1153bc3-d5db-44ae-8f9f-e268dcd82cd5" x="280" y="15" width="98" height="30">
+			<text><![CDATA[Animal]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47481e9b-e2e7-4dda-aca3-02f4fdbe108d"/>
+		</element>
+		<element kind="staticText" uuid="c96d0678-84ca-40af-9033-c866a439de53" x="380" y="15" width="100" height="30">
+			<text><![CDATA[Cliente]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a56541a-3584-4975-addc-15eded69310e"/>
+		</element>
+		<element kind="staticText" uuid="a081dee6-9756-43e1-811a-d9bfcb384969" x="480" y="10" width="79" height="30">
+			<text><![CDATA[Veterinário]]></text>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<element kind="textField" uuid="e54ef8d1-3c45-473a-9e40-96c7f95d14ea" x="0" y="40" width="80" height="30" linkType="None" linkTarget="Self">
+				<expression><![CDATA[$F{dataConsulta}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="efc12b26-4026-4474-ab3f-bc66ae7c587b"/>
+			</element>
+			<element kind="textField" uuid="ac417d1c-2db5-403f-90bf-f5b4a92cfbcf" x="80" y="40" width="100" height="30">
+				<expression><![CDATA[$F{horaConsulta}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e8ab625-a287-4b69-8149-7d857089cd14"/>
+			</element>
+			<element kind="textField" uuid="56c77c79-f470-4a2c-a53a-e1cdbac03f4f" x="180" y="40" width="98" height="30">
+				<expression><![CDATA[$F{descricao}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="74b3e0a8-15d4-441b-9001-15152ff54510"/>
+			</element>
+			<element kind="textField" uuid="f30439f4-ca24-4342-8d2d-b0deff59e18e" x="278" y="40" width="99" height="30">
+				<expression><![CDATA[$F{animal}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47481e9b-e2e7-4dda-aca3-02f4fdbe108d"/>
+			</element>
+			<element kind="textField" uuid="8200222e-e860-4a53-9c5a-02a89d9b7ac3" x="380" y="40" width="100" height="30" linkType="None" linkTarget="Self">
+				<expression><![CDATA[$F{cliente}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a56541a-3584-4975-addc-15eded69310e"/>
+			</element>
+			<element kind="textField" uuid="f3ec50fc-e56e-4f0f-b6d4-c6d7bdb1c973" x="480" y="40" width="79" height="30">
+				<expression><![CDATA[$F{veterinario}]]></expression>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
