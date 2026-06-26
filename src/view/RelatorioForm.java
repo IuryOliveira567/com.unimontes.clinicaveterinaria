@@ -219,10 +219,24 @@ public class RelatorioForm extends javax.swing.JFrame {
                 return;
             }
             
-            this.relatorioService.GeraConsultasPorPeriodo(data_inicial, data_final);
+            List<Consulta> consultas = this.relatorioService.GeraConsultasPorPeriodo(data_inicial, data_final);
             CamposVaziosLabel.setVisible(false);
             RelatorioInput1.setText("");
             RelatorioInput2.setText("");
+            
+            JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(consultas);
+            Map<String, Object> parametros = new HashMap<>();
+            
+            InputStream reportStream = getClass().getResourceAsStream("/relatorios/ConsultasPorPeriodo.jasper");
+            
+            try {
+               JasperReport jasperReport = (JasperReport) JRLoader.loadObject(reportStream);
+               JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parametros, dataSource);
+               JasperViewer.viewReport(jasperPrint, false);            
+            } catch(Exception e) {
+               System.out.println(e.getMessage());
+            }
+            
         }
     }//GEN-LAST:event_GerarRelatorioButtonActionPerformed
 
