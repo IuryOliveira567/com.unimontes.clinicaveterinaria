@@ -75,7 +75,6 @@ public class RelatorioForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TitloRelatorio = new javax.swing.JLabel();
         RelatorioSelect = new javax.swing.JComboBox<>();
         RelatorioInput1 = new javax.swing.JTextField();
         RelatorioInput2 = new javax.swing.JTextField();
@@ -84,66 +83,78 @@ public class RelatorioForm extends javax.swing.JFrame {
         RelatorioLabel2 = new javax.swing.JLabel();
         CamposVaziosLabel = new javax.swing.JLabel();
         VoltarButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        TitloRelatorio.setText("           Tipo de Relatório ");
-
+        RelatorioSelect.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         RelatorioSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Animais Por Cliente", "Consultas Por Veterinário", "Consultas Por Período" }));
         RelatorioSelect.addActionListener(this::RelatorioSelectActionPerformed);
 
+        RelatorioInput1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+
+        RelatorioInput2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         RelatorioInput2.addActionListener(this::RelatorioInput2ActionPerformed);
 
+        GerarRelatorioButton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        GerarRelatorioButton.setForeground(new java.awt.Color(51, 51, 51));
         GerarRelatorioButton.setText("Gerar Relatório");
         GerarRelatorioButton.addActionListener(this::GerarRelatorioButtonActionPerformed);
 
-        RelatorioLabel1.setText("Cliente");
+        RelatorioLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        RelatorioLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        RelatorioLabel1.setText("Cliente : ");
 
-        RelatorioLabel2.setText("Data Final");
+        RelatorioLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        RelatorioLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        RelatorioLabel2.setText("Data Final : ");
 
+        CamposVaziosLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         CamposVaziosLabel.setForeground(new java.awt.Color(255, 0, 0));
         CamposVaziosLabel.setText("Campos vazios não permitidos");
 
         VoltarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/left-arrow.png"))); // NOI18N
         VoltarButton.addActionListener(this::VoltarButtonActionPerformed);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText("Tipo de Relatório : ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(RelatorioLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(RelatorioLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE))
-                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(RelatorioInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RelatorioSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(RelatorioInput2, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CamposVaziosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(TitloRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(178, 178, 178)
-                        .addComponent(GerarRelatorioButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(184, Short.MAX_VALUE))
+                            .addComponent(RelatorioLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(RelatorioLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CamposVaziosLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(RelatorioInput2, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(RelatorioInput1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(RelatorioSelect, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addContainerGap(110, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(GerarRelatorioButton)
+                .addGap(169, 169, 169))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(VoltarButton)
-                .addGap(27, 27, 27)
-                .addComponent(TitloRelatorio)
-                .addGap(36, 36, 36)
-                .addComponent(RelatorioSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(RelatorioSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RelatorioInput1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,11 +163,11 @@ public class RelatorioForm extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(RelatorioLabel2)
                     .addComponent(RelatorioInput2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGap(26, 26, 26)
                 .addComponent(GerarRelatorioButton)
-                .addGap(35, 35, 35)
+                .addGap(39, 39, 39)
                 .addComponent(CamposVaziosLabel)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
 
         pack();
@@ -292,7 +303,7 @@ public class RelatorioForm extends javax.swing.JFrame {
     private javax.swing.JLabel RelatorioLabel1;
     private javax.swing.JLabel RelatorioLabel2;
     private javax.swing.JComboBox<String> RelatorioSelect;
-    private javax.swing.JLabel TitloRelatorio;
     private javax.swing.JButton VoltarButton;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
