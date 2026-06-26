@@ -33,6 +33,7 @@ public class AnimalForm extends javax.swing.JFrame {
         
         initComponents();
         getContentPane().setBackground(new Color(245, 247, 250));
+        FormErrorLabel.setVisible(false);
 
         carregaAnimais();
     
@@ -66,6 +67,7 @@ public class AnimalForm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaAnimais = new javax.swing.JTable();
         VoltarButton = new javax.swing.JButton();
+        FormErrorLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -137,6 +139,10 @@ public class AnimalForm extends javax.swing.JFrame {
         VoltarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/left-arrow.png"))); // NOI18N
         VoltarButton.addActionListener(this::VoltarButtonActionPerformed);
 
+        FormErrorLabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        FormErrorLabel.setForeground(new java.awt.Color(255, 0, 0));
+        FormErrorLabel.setText("Preencha todos os campos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -144,37 +150,42 @@ public class AnimalForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(CadastrarButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(AtualizarButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ExcluirButton))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(IdadeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addGap(18, 18, 18)
-                                    .addComponent(EspecieLabel)
-                                    .addGap(13, 13, 13))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(IdadeInput, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGap(49, 49, 49)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(ClienteIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(NomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(VoltarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(SexoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(IdadeLabel)))))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(18, 18, 18)
-                                    .addComponent(ClienteIDInput, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(SexoInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(NomeInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(EspecieInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(42, 42, 42)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addGap(18, 18, 18)
+                                            .addComponent(EspecieLabel)
+                                            .addGap(13, 13, 13))
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(49, 49, 49)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(ClienteIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(NomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(VoltarButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(SexoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(IdadeLabel)))))
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(18, 18, 18)
+                                            .addComponent(ClienteIDInput, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(SexoInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(NomeInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(EspecieInput, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(58, 58, 58)
+                                .addComponent(CadastrarButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(AtualizarButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ExcluirButton)))
+                        .addGap(42, 42, 42))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(FormErrorLabel)
+                        .addGap(85, 85, 85)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -208,6 +219,8 @@ public class AnimalForm extends javax.swing.JFrame {
                     .addComponent(CadastrarButton)
                     .addComponent(AtualizarButton)
                     .addComponent(ExcluirButton))
+                .addGap(30, 30, 30)
+                .addComponent(FormErrorLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(70, Short.MAX_VALUE)
@@ -238,37 +251,45 @@ public class AnimalForm extends javax.swing.JFrame {
     }//GEN-LAST:event_tabelaAnimaisMouseClicked
 
     private void CadastrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarButtonActionPerformed
-        // TODO add your handling code here:
-        String nome = NomeInput.getText();
-        String sexo = SexoInput.getText();
-        int idade = Integer.parseInt(IdadeInput.getText());
-        int cliente_id = Integer.parseInt(ClienteIDInput.getText());
-        String especie = EspecieInput.getText();
+        // TODO add your handling code here:     
+        if(verificaCampos()) {
+            FormErrorLabel.setVisible(true);
+        } else {
+            String nome = NomeInput.getText();
+            String sexo = SexoInput.getText();
+            int idade = Integer.parseInt(IdadeInput.getText());
+            int cliente_id = Integer.parseInt(ClienteIDInput.getText());
+            String especie = EspecieInput.getText();
         
-        Animal animal = new Animal(nome, sexo, idade, cliente_id, especie);
-        boolean result = animalController.cadastraAnimal(animal);
+            Animal animal = new Animal(nome, sexo, idade, cliente_id, especie);
+            boolean result = animalController.cadastraAnimal(animal);
         
-        carregaAnimais();
-        JOptionPane.showMessageDialog(this, "Animal Cadastrado!");
-        limparCampos();        
+            carregaAnimais();
+            JOptionPane.showMessageDialog(this, "Animal Cadastrado!");
+            limparCampos();     
+            FormErrorLabel.setVisible(false);
+        }
     }//GEN-LAST:event_CadastrarButtonActionPerformed
 
     private void AtualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarButtonActionPerformed
         // TODO add your handling code here:
-         // TODO add your handling code here:
-        
-        String nome = NomeInput.getText();
-        String sexo = SexoInput.getText();
-        int idade = Integer.parseInt(IdadeInput.getText());
-        int cliente_id = Integer.parseInt(ClienteIDInput.getText());
-        String especie = EspecieInput.getText();
+         if(verificaCampos()) {
+             FormErrorLabel.setVisible(true);
+         } else {
+             String nome = NomeInput.getText();
+             String sexo = SexoInput.getText();
+             int idade = Integer.parseInt(IdadeInput.getText());
+             int cliente_id = Integer.parseInt(ClienteIDInput.getText());
+             String especie = EspecieInput.getText();
                 
-        Animal animal = new Animal(this.idSelecionado, nome, sexo, idade, cliente_id, especie);
-        boolean result = animalController.atualizaAnimal(animal);
+             Animal animal = new Animal(this.idSelecionado, nome, sexo, idade, cliente_id, especie);
+             boolean result = animalController.atualizaAnimal(animal);
         
-        carregaAnimais();
-        JOptionPane.showMessageDialog(this, "Animal Atualizado!");
-        limparCampos();
+             carregaAnimais();
+             JOptionPane.showMessageDialog(this, "Animal Atualizado!");
+             limparCampos();
+             FormErrorLabel.setVisible(false);
+        }
     }//GEN-LAST:event_AtualizarButtonActionPerformed
 
     private void ExcluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirButtonActionPerformed
@@ -302,7 +323,11 @@ public class AnimalForm extends javax.swing.JFrame {
     private void EspecieInputActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EspecieInputActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EspecieInputActionPerformed
-
+    
+    private boolean verificaCampos() {
+        return(NomeInput.getText().isEmpty() || SexoInput.getText().isEmpty() || IdadeInput.getText().isEmpty() || ClienteIDInput.getText().isEmpty() || EspecieInput.getText().isEmpty());
+    }
+    
     private void limparCampos() {
         NomeInput.setText("");
         SexoInput.setText("");
@@ -362,6 +387,7 @@ public class AnimalForm extends javax.swing.JFrame {
     private javax.swing.JTextField EspecieInput;
     private javax.swing.JLabel EspecieLabel;
     private javax.swing.JButton ExcluirButton;
+    private javax.swing.JLabel FormErrorLabel;
     private javax.swing.JTextField IdadeInput;
     private javax.swing.JLabel IdadeLabel;
     private javax.swing.JTextField NomeInput;

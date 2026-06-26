@@ -27,6 +27,7 @@ public class ConsultaForm extends javax.swing.JFrame {
         this.idSelecionado = idSelecionado;
         
         initComponents();
+        LabelFormError.setVisible(false);
         getContentPane().setBackground(new Color(245, 247, 250));
 
         carregaConsultas();
@@ -68,6 +69,7 @@ public class ConsultaForm extends javax.swing.JFrame {
         AtualizarButton = new javax.swing.JButton();
         ExcluirButton = new javax.swing.JButton();
         VoltarButton = new javax.swing.JButton();
+        LabelFormError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -135,40 +137,50 @@ public class ConsultaForm extends javax.swing.JFrame {
         VoltarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/left-arrow.png"))); // NOI18N
         VoltarButton.addActionListener(this::VoltarButtonActionPerformed);
 
+        LabelFormError.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LabelFormError.setForeground(new java.awt.Color(255, 0, 0));
+        LabelFormError.setText("Preencha todos os campos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(HoraConsultaLabel)
-                            .addComponent(DescricaoLabel)
-                            .addComponent(AnimaLIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ClienteIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(DataConsultaLabel)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(AgendarButton)
-                                .addComponent(VeterinarioIDLabel)))
+                        .addGap(31, 31, 31)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(DescricaoInput, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                                    .addComponent(AnimalIDInput)
-                                    .addComponent(VeterinarioIDInput)
-                                    .addComponent(ClienteIDInput)
-                                    .addComponent(HoraConsultaInput)
-                                    .addComponent(DataConsultaInput)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(AtualizarButton)
-                                .addGap(14, 14, 14)
-                                .addComponent(ExcluirButton))))
-                    .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(HoraConsultaLabel)
+                                    .addComponent(DescricaoLabel)
+                                    .addComponent(AnimaLIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ClienteIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DataConsultaLabel)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(AgendarButton)
+                                        .addComponent(VeterinarioIDLabel)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(DescricaoInput, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                                            .addComponent(AnimalIDInput)
+                                            .addComponent(VeterinarioIDInput)
+                                            .addComponent(ClienteIDInput)
+                                            .addComponent(HoraConsultaInput)
+                                            .addComponent(DataConsultaInput)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(16, 16, 16)
+                                        .addComponent(AtualizarButton)
+                                        .addGap(14, 14, 14)
+                                        .addComponent(ExcluirButton))))
+                            .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(LabelFormError)
+                        .addGap(87, 87, 87)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 568, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
@@ -207,7 +219,9 @@ public class ConsultaForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(AgendarButton)
                             .addComponent(AtualizarButton)
-                            .addComponent(ExcluirButton)))
+                            .addComponent(ExcluirButton))
+                        .addGap(31, 31, 31)
+                        .addComponent(LabelFormError))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(27, 27, 27)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 504, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -242,37 +256,48 @@ public class ConsultaForm extends javax.swing.JFrame {
 
     private void AgendarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgendarButtonActionPerformed
         // TODO add your handling code here:
-        String data = DataConsultaInput.getText();
-        String hora = HoraConsultaInput.getText();
-        String descricao = DescricaoInput.getText();
-        int animal_id = Integer.parseInt(AnimalIDInput.getText());
-        int veterinario_id = Integer.parseInt(VeterinarioIDInput.getText());
-        int cliente_id = Integer.parseInt(ClienteIDInput.getText());
         
-        Consulta consulta = new Consulta(data, hora, descricao, animal_id, veterinario_id, cliente_id);
-        boolean result = consultaController.cadastraConsulta(consulta);
+        if(verificaCampos()) {
+            LabelFormError.setVisible(true);
+        } else {
+            String data = DataConsultaInput.getText();
+            String hora = HoraConsultaInput.getText();
+            String descricao = DescricaoInput.getText();
+            int animal_id = Integer.parseInt(AnimalIDInput.getText());
+            int veterinario_id = Integer.parseInt(VeterinarioIDInput.getText());
+            int cliente_id = Integer.parseInt(ClienteIDInput.getText());
         
-        carregaConsultas();
-        JOptionPane.showMessageDialog(this, "Consulta Cadastrada!");
-        limparCampos();        
+            Consulta consulta = new Consulta(data, hora, descricao, animal_id, veterinario_id, cliente_id);
+            boolean result = consultaController.cadastraConsulta(consulta);
+        
+            carregaConsultas();
+            JOptionPane.showMessageDialog(this, "Consulta Cadastrada!");
+            limparCampos();
+            LabelFormError.setVisible(false);
+        }
     }//GEN-LAST:event_AgendarButtonActionPerformed
 
     private void AtualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarButtonActionPerformed
         // TODO add your handling code here:
-        String data = DataConsultaInput.getText();
-        String hora = HoraConsultaInput.getText();
-        String descricao = DescricaoInput.getText();
+        if(verificaCampos()) {
+            LabelFormError.setVisible(true);
+        } else {
+            String data = DataConsultaInput.getText();
+            String hora = HoraConsultaInput.getText();
+            String descricao = DescricaoInput.getText();
         
-        int animal_id = Integer.parseInt(AnimalIDInput.getText());
-        int veterinario_id = Integer.parseInt(VeterinarioIDInput.getText());
-        int cliente_id = Integer.parseInt(ClienteIDInput.getText());
+            int animal_id = Integer.parseInt(AnimalIDInput.getText());
+            int veterinario_id = Integer.parseInt(VeterinarioIDInput.getText());
+            int cliente_id = Integer.parseInt(ClienteIDInput.getText());
                 
-        Consulta consulta = new Consulta(this.idSelecionado, data, hora, descricao, animal_id, veterinario_id, cliente_id);
-        boolean result = consultaController.atualizaConsulta(consulta);
+            Consulta consulta = new Consulta(this.idSelecionado, data, hora, descricao, animal_id, veterinario_id, cliente_id);
+            boolean result = consultaController.atualizaConsulta(consulta);
         
-        carregaConsultas();
-        JOptionPane.showMessageDialog(this, "Consulta Atualizada!");
-        limparCampos();
+            carregaConsultas();
+            JOptionPane.showMessageDialog(this, "Consulta Atualizada!");
+            limparCampos();
+            LabelFormError.setVisible(false);
+        }
     }//GEN-LAST:event_AtualizarButtonActionPerformed
 
     private void ExcluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirButtonActionPerformed
@@ -355,7 +380,11 @@ public class ConsultaForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new ConsultaForm().setVisible(true));
     }
-
+    
+    private boolean verificaCampos() {
+        return(DataConsultaInput.getText().isEmpty() || HoraConsultaInput.getText().isEmpty() || DescricaoInput.getText().isEmpty() || AnimalIDInput.getText().isEmpty() || VeterinarioIDInput.getText().isEmpty() || ClienteIDInput.getText().isEmpty());
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AgendarButton;
     private javax.swing.JLabel AnimaLIDLabel;
@@ -370,6 +399,7 @@ public class ConsultaForm extends javax.swing.JFrame {
     private javax.swing.JButton ExcluirButton;
     private javax.swing.JTextField HoraConsultaInput;
     private javax.swing.JLabel HoraConsultaLabel;
+    private javax.swing.JLabel LabelFormError;
     private javax.swing.JTextField VeterinarioIDInput;
     private javax.swing.JLabel VeterinarioIDLabel;
     private javax.swing.JButton VoltarButton;

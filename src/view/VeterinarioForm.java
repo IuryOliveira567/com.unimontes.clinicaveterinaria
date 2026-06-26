@@ -26,6 +26,7 @@ public class VeterinarioForm extends javax.swing.JFrame {
         this.veterinarioController = new VeterinarioController();
         this.idSelecionado = idSelecionado;
         initComponents();
+        LabelFormError.setVisible(false);
         getContentPane().setBackground(new Color(245, 247, 250));
         carregaVeterinarios();
     }
@@ -51,6 +52,7 @@ public class VeterinarioForm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaVeterinarios = new javax.swing.JTable();
         VoltarButton = new javax.swing.JButton();
+        LabelFormError = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,6 +112,10 @@ public class VeterinarioForm extends javax.swing.JFrame {
         VoltarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/left-arrow.png"))); // NOI18N
         VoltarButton.addActionListener(this::VoltarButtonActionPerformed);
 
+        LabelFormError.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LabelFormError.setForeground(new java.awt.Color(255, 0, 0));
+        LabelFormError.setText("Preencha todos os campos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -140,7 +146,10 @@ public class VeterinarioForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(AtualizarButton)
                         .addGap(12, 12, 12)
-                        .addComponent(ExcluirButton)))
+                        .addComponent(ExcluirButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(LabelFormError)))
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 518, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -167,6 +176,8 @@ public class VeterinarioForm extends javax.swing.JFrame {
                     .addComponent(CadastrarButton)
                     .addComponent(AtualizarButton)
                     .addComponent(ExcluirButton))
+                .addGap(39, 39, 39)
+                .addComponent(LabelFormError)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(23, Short.MAX_VALUE)
@@ -199,40 +210,53 @@ public class VeterinarioForm extends javax.swing.JFrame {
 
     private void CadastrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadastrarButtonActionPerformed
         // TODO add your handling code here:
-        String nome = NomeInput.getText();
-        String crmv = CRMVInput.getText();
-        String telefone = TelefoneInput.getText();
         
-        Veterinario veterinario = new Veterinario(nome, crmv, telefone);
-        boolean result = veterinarioController.cadastraVeterinario(veterinario);
-        
-        if(result) {
-            carregaVeterinarios();
-            JOptionPane.showMessageDialog(this, "Veterinario Cadastrado!");
-            limparCampos();         
+        if(verificaCampos()) {
+            LabelFormError.setVisible(true);
         } else {
-           JOptionPane.showMessageDialog(this, "Veterinario já Existe!");
+            String nome = NomeInput.getText();
+            String crmv = CRMVInput.getText();
+            String telefone = TelefoneInput.getText();
+        
+            Veterinario veterinario = new Veterinario(nome, crmv, telefone);
+            boolean result = veterinarioController.cadastraVeterinario(veterinario);
+        
+            if(result) {
+                carregaVeterinarios();
+                JOptionPane.showMessageDialog(this, "Veterinario Cadastrado!");
+                limparCampos(); 
+            } else {
+               JOptionPane.showMessageDialog(this, "Veterinario já Existe!");
+            }
+            
+            LabelFormError.setVisible(false);
+
         }
     }//GEN-LAST:event_CadastrarButtonActionPerformed
 
     private void AtualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarButtonActionPerformed
         // TODO add your handling code here:
          // TODO add your handling code here:
-        
-        String nome = NomeInput.getText();
-        String crmv = CRMVInput.getText();
-        String telefone = TelefoneInput.getText();
+        if(verificaCampos()) {
+            LabelFormError.setVisible(true);
+        } else {
+            String nome = NomeInput.getText();
+            String crmv = CRMVInput.getText();
+            String telefone = TelefoneInput.getText();
                 
-        Veterinario veterinario = new Veterinario(this.idSelecionado, nome, crmv, telefone);
-        boolean result = veterinarioController.atualizaVeterinario(veterinario);
+            Veterinario veterinario = new Veterinario(this.idSelecionado, nome, crmv, telefone);
+            boolean result = veterinarioController.atualizaVeterinario(veterinario);
         
-        carregaVeterinarios();
-        JOptionPane.showMessageDialog(this, "Veterinario Atualizado!");
-        limparCampos();
+            carregaVeterinarios();
+            JOptionPane.showMessageDialog(this, "Veterinario Atualizado!");
+            limparCampos();
+            LabelFormError.setVisible(false);
+        }
     }//GEN-LAST:event_AtualizarButtonActionPerformed
 
     private void ExcluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirButtonActionPerformed
         // TODO add your handling code here:
+        
         int id = this.idSelecionado;
         String nome = NomeInput.getText();
         String crmv = CRMVInput.getText();
@@ -257,6 +281,10 @@ public class VeterinarioForm extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_VoltarButtonActionPerformed
 
+    private boolean verificaCampos() {
+        return(NomeInput.getText().isEmpty() || CRMVInput.getText().isEmpty() || TelefoneInput.getText().isEmpty());
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -310,6 +338,7 @@ public class VeterinarioForm extends javax.swing.JFrame {
     private javax.swing.JLabel CRMVLabel;
     private javax.swing.JButton CadastrarButton;
     private javax.swing.JButton ExcluirButton;
+    private javax.swing.JLabel LabelFormError;
     private javax.swing.JTextField NomeInput;
     private javax.swing.JLabel NomeLabel;
     private javax.swing.JTextField TelefoneInput;

@@ -28,6 +28,7 @@ public class ClienteForm extends javax.swing.JFrame {
         this.idSelecionado = idSelecionado;
         initComponents();
         getContentPane().setBackground(new Color(245, 247, 250));
+        LabelFormErro.setVisible(false);
 
         carregaClientes();
         
@@ -59,6 +60,7 @@ public class ClienteForm extends javax.swing.JFrame {
         tabelaClientes = new javax.swing.JTable();
         ExcluirButton = new javax.swing.JButton();
         VoltarButton = new javax.swing.JButton();
+        LabelFormErro = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,6 +138,10 @@ public class ClienteForm extends javax.swing.JFrame {
         VoltarButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/left-arrow.png"))); // NOI18N
         VoltarButton.addActionListener(this::VoltarButtonActionPerformed);
 
+        LabelFormErro.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LabelFormErro.setForeground(new java.awt.Color(255, 0, 0));
+        LabelFormErro.setText("Preencha todos os campos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -143,31 +149,37 @@ public class ClienteForm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57))
+                                .addGap(22, 22, 22)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(VoltarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(57, 57, 57))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(TelefoneLabel)
+                                            .addComponent(CPFLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(EmailLabel)
+                                            .addComponent(NomeLabel))
+                                        .addGap(26, 26, 26)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(NomeInput, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
+                                    .addComponent(CPFInput)
+                                    .addComponent(TelefoneInput)
+                                    .addComponent(EmailInput)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(TelefoneLabel)
-                                    .addComponent(CPFLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(EmailLabel)
-                                    .addComponent(NomeLabel))
-                                .addGap(26, 26, 26)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NomeInput, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
-                            .addComponent(CPFInput)
-                            .addComponent(TelefoneInput)
-                            .addComponent(EmailInput)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(CadastrarButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(AtualizarButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(ExcluirButton)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                                .addGap(52, 52, 52)
+                                .addComponent(CadastrarButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(AtualizarButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ExcluirButton)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(LabelFormErro, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)))
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -198,7 +210,9 @@ public class ClienteForm extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(CadastrarButton)
                             .addComponent(AtualizarButton)
-                            .addComponent(ExcluirButton)))
+                            .addComponent(ExcluirButton))
+                        .addGap(35, 35, 35)
+                        .addComponent(LabelFormErro))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 413, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -215,33 +229,46 @@ public class ClienteForm extends javax.swing.JFrame {
         String telefone = TelefoneInput.getText();
         String email = EmailInput.getText();
         
-        if(!verificaCPF(cpf)) {
-            Cliente cliente = new Cliente(nome, cpf, telefone, email);
-            boolean result = clienteController.cadastraCliente(cliente);
-        
-             carregaClientes();
-             JOptionPane.showMessageDialog(this, "Cliente Cadastrado!");
-             limparCampos();
+        if(verificaCampos()) {
+            LabelFormErro.setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(this, "CPF já cadastrado");
+            System.out.println("ok");
+            if(!verificaCPF(cpf)) {
+                Cliente cliente = new Cliente(nome, cpf, telefone, email);
+                boolean result = clienteController.cadastraCliente(cliente);
+        
+                carregaClientes();
+                JOptionPane.showMessageDialog(this, "Cliente Cadastrado!");
+                limparCampos();
+                LabelFormErro.setVisible(false);            
+            } else {
+                JOptionPane.showMessageDialog(this, "CPF já cadastrado");
+            }   
         }
     }//GEN-LAST:event_CadastrarButtonActionPerformed
 
+    private boolean verificaCampos() {
+        return(NomeInput.getText().isEmpty() || CPFInput.getText().isEmpty() || TelefoneInput.getText().isEmpty() || EmailInput.getText().isEmpty());
+    }
+    
     private void AtualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtualizarButtonActionPerformed
-        // TODO add your handling code here:
         // TODO add your handling code here:
         
         String nome = NomeInput.getText();
         String cpf = CPFInput.getText();
         String telefone = TelefoneInput.getText();
         String email = EmailInput.getText();
-                
-        Cliente cliente = new Cliente(this.idSelecionado, nome, cpf, telefone, email);
-        boolean result = clienteController.atualizaCliente(cliente);
+        if(verificaCampos()) {
+            LabelFormErro.setVisible(true);
+        } else {
+            Cliente cliente = new Cliente(this.idSelecionado, nome, cpf, telefone, email);
+            boolean result = clienteController.atualizaCliente(cliente);
         
-        carregaClientes();
-        JOptionPane.showMessageDialog(this, "Cliente Atualizado!");
-        limparCampos();
+            carregaClientes();
+            JOptionPane.showMessageDialog(this, "Cliente Atualizado!");
+            limparCampos();  
+            LabelFormErro.setVisible(false);
+        }
     }//GEN-LAST:event_AtualizarButtonActionPerformed
 
     private void tabelaClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tabelaClientesMouseClicked
@@ -367,6 +394,7 @@ public class ClienteForm extends javax.swing.JFrame {
     private javax.swing.JTextField EmailInput;
     private javax.swing.JLabel EmailLabel;
     private javax.swing.JButton ExcluirButton;
+    private javax.swing.JLabel LabelFormErro;
     private javax.swing.JTextField NomeInput;
     private javax.swing.JLabel NomeLabel;
     private javax.swing.JTextField TelefoneInput;
