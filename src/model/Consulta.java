@@ -17,6 +17,8 @@ public class Consulta {
     private int veterinario_id;
     private int id_cliente;
     private String veterinario;
+    private String animal;
+    private String cliente;
     
     public Consulta() {}
     
@@ -50,6 +52,19 @@ public class Consulta {
         this.veterinario = veterinario;
     }
     
+    public Consulta(int id, String data_consulta, String hora_consulta, String descricao, int animal_id, int veterinario_id, int id_cliente, String veterinario, String animal, String cliente) {
+        this.id = id;
+        this.data_consulta = data_consulta;
+        this.hora_consulta = hora_consulta;
+        this.descricao = descricao;
+        this.animal_id = animal_id;
+        this.veterinario_id = veterinario_id;
+        this.id_cliente = id_cliente;
+        this.veterinario = veterinario;
+        this.animal = animal;
+        this.cliente = cliente;
+    }
+
     public int getId() {
         return this.id;
     }
@@ -112,5 +127,21 @@ public class Consulta {
     
     public void setVeterinario(String veterinario) {
         this.veterinario = veterinario;
+    }
+    
+    public String getAnimal() {
+        return this.animal;
+    }
+    
+    public void setAnimal(String animal) {
+        this.animal = animal;
+    }
+    
+    public String getCliente() {
+        return this.cliente;
+    }
+    
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
     }
 }
