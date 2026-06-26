@@ -294,24 +294,29 @@ public class AnimalForm extends javax.swing.JFrame {
 
     private void ExcluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirButtonActionPerformed
         // TODO add your handling code here:
-        int id = this.idSelecionado;
-        String nome = NomeInput.getText();
-        String sexo = SexoInput.getText();
-        int idade = Integer.parseInt(IdadeInput.getText());
-        int cliente_id = Integer.parseInt(ClienteIDInput.getText());
-        String especie = EspecieInput.getText();
-        
-        Animal animal = new Animal(id, nome, sexo, idade, cliente_id, especie);
-        boolean result = this.animalController.apagaAnimal(animal);
-        
-        if(result) {
-            JOptionPane.showMessageDialog(this, "Animal Excluido!");
-            carregaAnimais();
+        if(verificaCampos()) {
+            FormErrorLabel.setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(this, "Erro ao excluir o animal!");
-        }
+            int id = this.idSelecionado;
+            String nome = NomeInput.getText();
+            String sexo = SexoInput.getText();
+            int idade = Integer.parseInt(IdadeInput.getText());
+            int cliente_id = Integer.parseInt(ClienteIDInput.getText());
+            String especie = EspecieInput.getText();
         
-        limparCampos();
+            Animal animal = new Animal(id, nome, sexo, idade, cliente_id, especie);
+            boolean result = this.animalController.apagaAnimal(animal);
+        
+            if(result) {
+                JOptionPane.showMessageDialog(this, "Animal Excluido!");
+                carregaAnimais();
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro ao excluir o animal!");
+            }
+        
+            limparCampos();
+            FormErrorLabel.setVisible(false);
+        }
     }//GEN-LAST:event_ExcluirButtonActionPerformed
 
     private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed

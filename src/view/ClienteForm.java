@@ -290,23 +290,28 @@ public class ClienteForm extends javax.swing.JFrame {
 
     private void ExcluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirButtonActionPerformed
         // TODO add your handling code here:
-        int id = this.idSelecionado;
-        String nome = NomeInput.getText();
-        String cpf = CPFInput.getText();
-        String telefone = TelefoneInput.getText();
-        String email = EmailInput.getText();
-        
-        Cliente cliente = new Cliente(id, nome, cpf, telefone, email);
-        boolean result = this.clienteController.apagaCliente(cliente);
-        
-        if(result) {
-            JOptionPane.showMessageDialog(this, "Cliente Apagado!");
-            carregaClientes();
+        if(verificaCampos()) {
+            LabelFormErro.setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(this, "Erro ao apagar o cliente!");
-        }
+            int id = this.idSelecionado;
+            String nome = NomeInput.getText();
+            String cpf = CPFInput.getText();
+            String telefone = TelefoneInput.getText();
+            String email = EmailInput.getText();
         
-        limparCampos();
+            Cliente cliente = new Cliente(id, nome, cpf, telefone, email);
+            boolean result = this.clienteController.apagaCliente(cliente);
+        
+            if(result) {
+                JOptionPane.showMessageDialog(this, "Cliente Apagado!");
+                carregaClientes();
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro ao apagar o cliente!");
+            }
+            
+            limparCampos();
+            LabelFormErro.setVisible(false);
+        }
     }//GEN-LAST:event_ExcluirButtonActionPerformed
 
     private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed

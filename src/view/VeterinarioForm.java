@@ -256,23 +256,27 @@ public class VeterinarioForm extends javax.swing.JFrame {
 
     private void ExcluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirButtonActionPerformed
         // TODO add your handling code here:
-        
-        int id = this.idSelecionado;
-        String nome = NomeInput.getText();
-        String crmv = CRMVInput.getText();
-        String telefone = TelefoneInput.getText();
-        
-        Veterinario veterinario = new Veterinario(id, nome, crmv, telefone);
-        boolean result = this.veterinarioController.apagaVeterinario(veterinario);
-        
-        if(result) {
-            JOptionPane.showMessageDialog(this, "Veterinario Excluido!");
-            carregaVeterinarios();
+        if(verificaCampos()) {
+            LabelFormError.setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(this, "Erro ao excluir o Veterinario!");
-        }
+            int id = this.idSelecionado;
+            String nome = NomeInput.getText();
+            String crmv = CRMVInput.getText();
+            String telefone = TelefoneInput.getText();
         
-        limparCampos();
+            Veterinario veterinario = new Veterinario(id, nome, crmv, telefone);
+            boolean result = this.veterinarioController.apagaVeterinario(veterinario);
+        
+            if(result) {
+                JOptionPane.showMessageDialog(this, "Veterinario Excluido!");
+                carregaVeterinarios();
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro ao excluir o Veterinario!");
+            }
+        
+            limparCampos();
+            LabelFormError.setVisible(false);
+        }
     }//GEN-LAST:event_ExcluirButtonActionPerformed
 
     private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed

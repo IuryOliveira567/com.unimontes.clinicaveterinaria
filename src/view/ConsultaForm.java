@@ -302,25 +302,30 @@ public class ConsultaForm extends javax.swing.JFrame {
 
     private void ExcluirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExcluirButtonActionPerformed
         // TODO add your handling code here:
-        int id = this.idSelecionado;
-        String data = DataConsultaInput.getText();
-        String hora = HoraConsultaInput.getText();
-        String descricao = DescricaoInput.getText();
-        int animal_id = Integer.parseInt(AnimalIDInput.getText());
-        int veterinario_id = Integer.parseInt(VeterinarioIDInput.getText());
-        int cliente_id = Integer.parseInt(ClienteIDInput.getText());
-        
-        Consulta consulta = new Consulta(id, data, hora, descricao, animal_id, veterinario_id, cliente_id);
-        boolean result = this.consultaController.apagaConsulta(consulta);
-        
-        if(result) {
-            JOptionPane.showMessageDialog(this, "Consulta excluida!");
-            carregaConsultas();
+        if(verificaCampos()) {
+            LabelFormError.setVisible(true);
         } else {
-            JOptionPane.showMessageDialog(this, "Erro ao excluir consulta!");
-        }
+            int id = this.idSelecionado;
+            String data = DataConsultaInput.getText();
+            String hora = HoraConsultaInput.getText();
+            String descricao = DescricaoInput.getText();
+            int animal_id = Integer.parseInt(AnimalIDInput.getText());
+            int veterinario_id = Integer.parseInt(VeterinarioIDInput.getText());
+            int cliente_id = Integer.parseInt(ClienteIDInput.getText());
         
-        limparCampos();
+            Consulta consulta = new Consulta(id, data, hora, descricao, animal_id, veterinario_id, cliente_id);
+            boolean result = this.consultaController.apagaConsulta(consulta);
+        
+            if(result) {
+                JOptionPane.showMessageDialog(this, "Consulta excluida!");
+                carregaConsultas();
+            } else {
+                JOptionPane.showMessageDialog(this, "Erro ao excluir consulta!");
+            }
+        
+            limparCampos();
+            LabelFormError.setVisible(false);
+        }
     }//GEN-LAST:event_ExcluirButtonActionPerformed
 
     private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed
