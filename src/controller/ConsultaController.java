@@ -32,4 +32,8 @@ public class ConsultaController {
     public boolean apagaConsulta(Consulta consulta) {
         return this.consultaDAO.apagar(consulta);
     }
+    
+    public List<Consulta> obterConsultasPorVeterinario(String veterinario) {
+        return this.consultaDAO.ConsultasPorVeterinario(veterinario);
+    }
 }

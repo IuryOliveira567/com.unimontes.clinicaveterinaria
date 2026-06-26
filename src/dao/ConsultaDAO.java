@@ -112,4 +112,36 @@ public class ConsultaDAO {
             return false;
         }
     }
+    
+    public List<Consulta> ConsultasPorVeterinario(String veterinario) {
+        String sql_query = "SELECT co.id, co.data_consulta, co.hora_consulta, co.descricao, co.animal_id, co.cliente_id, co.veterinario_id, v.nome AS veterinario FROM consultas co INNER JOIN veterinarios v ON v.id = co.veterinario_id WHERE v.nome=?";
+        
+        List<Consulta> consultas = new ArrayList<>();
+
+        try {
+            PreparedStatement pst = this.con.prepareStatement(sql_query);
+            pst.setString(1, veterinario);
+            ResultSet rs = pst.executeQuery();
+            
+            while(rs.next()) {
+
+                Consulta c = new Consulta();
+               
+                c.setId(rs.getInt("id"));
+                c.setDataConsulta(rs.getString("data_consulta"));
+                c.setHoraConsulta(rs.getString("hora_consulta"));
+                c.setDescricao(rs.getString("descricao"));
+                c.setAnimalId(rs.getInt("animal_id"));
+                c.setVeterinarioId(rs.getInt("veterinario_id"));
+                c.setClienteId(rs.getInt("cliente_id"));                
+                
+                consultas.add(c);
+            }
+
+        } catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        
+        return consultas;
+    }
 }
