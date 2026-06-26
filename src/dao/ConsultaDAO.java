@@ -132,9 +132,9 @@ public class ConsultaDAO {
                 c.setHoraConsulta(rs.getString("hora_consulta"));
                 c.setDescricao(rs.getString("descricao"));
                 c.setAnimalId(rs.getInt("animal_id"));
-                c.setVeterinarioId(rs.getInt("veterinario_id"));
                 c.setClienteId(rs.getInt("cliente_id"));                
-                
+                c.setVeterinarioId(rs.getInt("veterinario_id"));
+                c.setVeterinario(rs.getString("veterinario"));
                 consultas.add(c);
             }
 
