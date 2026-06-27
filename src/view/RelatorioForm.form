@@ -34,9 +34,9 @@
                   <Component id="VoltarButton" min="-2" pref="52" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="RelatorioLabel1" min="-2" pref="80" max="-2" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <Component id="RelatorioLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="RelatorioLabel1" alignment="0" min="-2" pref="96" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
