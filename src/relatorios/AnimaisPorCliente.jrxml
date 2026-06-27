@@ -7,57 +7,62 @@
 	<field name="cliente" class="java.lang.String"/>
 	<field name="especie" class="java.lang.String"/>
 	<background splitType="Stretch"/>
-	<title height="79" splitType="Stretch">
-		<element kind="staticText" uuid="4e78c706-d438-4b9d-b790-c90d45f6f7f7" x="170" y="30" width="250" height="30" fontSize="14.0">
-			<text><![CDATA[Relatório de Animais por Cliente]]></text>
+	<title height="87" splitType="Stretch">
+		<element kind="rectangle" uuid="0ae5c149-da35-4dfe-b1c1-2fc21b9f3414" mode="Opaque" x="-20" y="10" width="595" height="50" forecolor="#2E5EAA" backcolor="#2E5EAA"/>
+		<element kind="staticText" uuid="4e78c706-d438-4b9d-b790-c90d45f6f7f7" mode="Transparent" x="70" y="20" width="414" height="30" forecolor="#FCFCFC" markup="html" fontSize="19.0" hTextAlign="Center" vTextAlign="Justified">
+			<text><![CDATA[RELATÓRIO DE ANIMAIS POR CLIENTE]]></text>
 			<property name="com.jaspersoft.studio.unit.width" value="px"/>
 		</element>
 	</title>
-	<pageHeader height="35" splitType="Stretch"/>
-	<columnHeader height="61" splitType="Stretch">
-		<element kind="staticText" uuid="b129eeff-091e-447a-bb93-c5920714bae2" x="0" y="15" width="80" height="30">
-			<text><![CDATA[nome]]></text>
+	<pageHeader height="79" splitType="Stretch"/>
+	<columnHeader height="46" splitType="Stretch">
+		<element kind="line" uuid="5b4fe899-808d-41a7-bf88-73a5fbd04398" x="-20" y="45" width="595" height="1"/>
+		<element kind="rectangle" uuid="4fc7b9d2-266f-41d5-9485-264a2cbcdcc6" x="-20" y="-3" width="595" height="48" backcolor="rgba(46, 94, 170, 0.49803922)"/>
+		<element kind="staticText" uuid="b129eeff-091e-447a-bb93-c5920714bae2" x="40" y="10" width="60" height="30" fontSize="13.0">
+			<text><![CDATA[Nome]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="efc12b26-4026-4474-ab3f-bc66ae7c587b"/>
 		</element>
-		<element kind="staticText" uuid="9d7f6c1d-e9b4-452d-9298-01d82597f863" x="80" y="15" width="99" height="30">
-			<text><![CDATA[sexo]]></text>
+		<element kind="staticText" uuid="9d7f6c1d-e9b4-452d-9298-01d82597f863" x="140" y="10" width="79" height="30" fontSize="13.0">
+			<text><![CDATA[Sexo]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e8ab625-a287-4b69-8149-7d857089cd14"/>
 		</element>
-		<element kind="staticText" uuid="1f72d398-0aaa-4bf9-a9f4-3eb7d2ae9607" x="180" y="15" width="99" height="30">
-			<text><![CDATA[idade]]></text>
+		<element kind="staticText" uuid="1f72d398-0aaa-4bf9-a9f4-3eb7d2ae9607" x="260" y="10" width="59" height="30" fontSize="13.0">
+			<text><![CDATA[Idade]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="74b3e0a8-15d4-441b-9001-15152ff54510"/>
 		</element>
-		<element kind="staticText" uuid="e1153bc3-d5db-44ae-8f9f-e268dcd82cd5" x="280" y="15" width="98" height="30">
-			<text><![CDATA[cliente]]></text>
+		<element kind="staticText" uuid="e1153bc3-d5db-44ae-8f9f-e268dcd82cd5" x="360" y="10" width="70" height="30" fontSize="13.0">
+			<text><![CDATA[Cliente]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47481e9b-e2e7-4dda-aca3-02f4fdbe108d"/>
 		</element>
-		<element kind="staticText" uuid="c96d0678-84ca-40af-9033-c866a439de53" x="380" y="15" width="100" height="30">
-			<text><![CDATA[especie]]></text>
+		<element kind="staticText" uuid="c96d0678-84ca-40af-9033-c866a439de53" x="460" y="10" width="67" height="30" fontSize="13.0">
+			<text><![CDATA[Espécie]]></text>
 			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a56541a-3584-4975-addc-15eded69310e"/>
 		</element>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
-			<element kind="textField" uuid="e54ef8d1-3c45-473a-9e40-96c7f95d14ea" x="0" y="40" width="80" height="30" linkType="None" linkTarget="Self">
+		<band height="41" splitType="Stretch">
+			<element kind="textField" uuid="e54ef8d1-3c45-473a-9e40-96c7f95d14ea" x="40" y="10" width="50" height="30" linkType="None" linkTarget="Self">
 				<expression><![CDATA[$F{nome}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="efc12b26-4026-4474-ab3f-bc66ae7c587b"/>
 			</element>
-			<element kind="textField" uuid="ac417d1c-2db5-403f-90bf-f5b4a92cfbcf" x="80" y="40" width="100" height="30">
+			<element kind="textField" uuid="ac417d1c-2db5-403f-90bf-f5b4a92cfbcf" x="139" y="10" width="80" height="30">
 				<expression><![CDATA[$F{sexo}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e8ab625-a287-4b69-8149-7d857089cd14"/>
 			</element>
-			<element kind="textField" uuid="56c77c79-f470-4a2c-a53a-e1cdbac03f4f" x="180" y="40" width="98" height="30">
+			<element kind="textField" uuid="56c77c79-f470-4a2c-a53a-e1cdbac03f4f" x="260" y="10" width="80" height="30">
 				<expression><![CDATA[$F{idade}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="74b3e0a8-15d4-441b-9001-15152ff54510"/>
 			</element>
-			<element kind="textField" uuid="f30439f4-ca24-4342-8d2d-b0deff59e18e" x="278" y="40" width="99" height="30">
+			<element kind="textField" uuid="f30439f4-ca24-4342-8d2d-b0deff59e18e" x="360" y="10" width="79" height="30">
 				<expression><![CDATA[$F{cliente}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47481e9b-e2e7-4dda-aca3-02f4fdbe108d"/>
 			</element>
-			<element kind="textField" uuid="8200222e-e860-4a53-9c5a-02a89d9b7ac3" x="380" y="40" width="100" height="30" linkType="None" linkTarget="Self">
+			<element kind="textField" uuid="8200222e-e860-4a53-9c5a-02a89d9b7ac3" x="460" y="10" width="100" height="30" linkType="None" linkTarget="Self">
 				<expression><![CDATA[$F{especie}]]></expression>
 				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a56541a-3584-4975-addc-15eded69310e"/>
 			</element>
+			<element kind="line" uuid="93f28e76-43d3-412f-9e19-6550290c0f58" x="-20" y="40" width="595" height="1"/>
+			<element kind="line" uuid="d57a5653-1776-463e-967a-f930f68c76b7" x="-20" y="-1" width="593" height="1"/>
 		</band>
 	</detail>
 	<columnFooter height="45" splitType="Stretch"/>
